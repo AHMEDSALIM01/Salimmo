@@ -10,6 +10,7 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -21,7 +22,7 @@ import java.time.LocalDateTime;
 @Where(clause = "isDeleted=false")
 public class PropertyOwner extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "owner")
-    private Property property;
+    private Set<Property> properties;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
