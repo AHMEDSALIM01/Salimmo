@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property">
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/CityRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/ExteriorPropertyRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/InnerPropertyRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyEnergiesRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyLocationRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyOwnerRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertySurfaceRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/CityResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/ExteriorPropertyResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/InnerPropertyResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyEnergiesResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyLocationResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyOwnerResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertySurfaceResponseDto.java" afterDir="false" />
+    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="Creation de Response et RequestDto">
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/CityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/ExteriorPropertyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/InnerPropertyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyEnergiesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyLocationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyOwnerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertySurfaceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyOwner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +25,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,6 +36,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -126,6 +113,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Youcode\IdeaProjects\Salimmo\salimmo-parent\property-service\src\main\java\org\propertyservice\dto\responsedto" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.propertyservice.repositories" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -210,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678913803644</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Creation de Response et RequestDto">
+      <created>1678975522444</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678975522444</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,7 +239,8 @@
     <MESSAGE value="creation les corps des entites" />
     <MESSAGE value="creation Property entity" />
     <MESSAGE value="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property" />
+    <MESSAGE value="Creation de Response et RequestDto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation de Response et RequestDto" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
