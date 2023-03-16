@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,12 +11,19 @@
         <module name="authentication-service" />
         <module name="discovery-server" />
         <module name="property-service" />
-        <module name="notification-service" />
         <module name="contract-service" />
+        <module name="notification-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-gateway" target="11" />
+      <module name="authentication-service" target="11" />
+      <module name="contract-service" target="11" />
+      <module name="discovery-server" target="11" />
+      <module name="notification-service" target="11" />
+      <module name="property-service" target="11" />
       <module name="property_service" target="11" />
+      <module name="salimmo-parent" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
