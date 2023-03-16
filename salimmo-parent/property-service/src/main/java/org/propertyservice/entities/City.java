@@ -7,7 +7,6 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -15,15 +14,13 @@ import java.util.Set;
 @NoArgsConstructor
 @Data
 @ToString
-public class City implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class City extends BaseEntity implements Serializable{
+    @Column(nullable = false)
     private String name;
     @OneToMany(mappedBy = "city",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<PropertyLocation> propertyLocations;
+    @Column(nullable = false)
     private String latitude;
+    @Column(nullable = false)
     private String longitude;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }

@@ -29,4 +29,12 @@ public class PropertyLocation implements Serializable {
     private String longitude;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    @PrePersist
+    private void createdAt(){
+        this.createdAt = LocalDateTime.now();
+    }
+    @PreUpdate
+    private void updatedAt(){
+        this.updatedAt = LocalDateTime.now();
+    }
 }

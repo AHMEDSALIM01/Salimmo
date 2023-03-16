@@ -4,21 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation Property entity">
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/ExteriorProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/InnerProperty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyOwner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertySurface.java" afterDir="false" />
+    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property">
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/HeatingType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint-state.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authentication-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authentication-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contract-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/contract-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notification-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/notification-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/ExteriorProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/ExteriorProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/InnerProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/InnerProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyOwner.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyOwner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertySurface.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertySurface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +84,10 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -90,10 +99,19 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
     "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "681cf87c9504b3135dcfaee43a32fd5e",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.PropertyService">
     <configuration name="PropertyService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="property-service" />
@@ -119,7 +137,8 @@
       <option name="presentableId" value="Default" />
       <updated>1678644950696</updated>
       <workItem from="1678644954221" duration="7981000" />
-      <workItem from="1678659758657" duration="7275000" />
+      <workItem from="1678659758657" duration="8765000" />
+      <workItem from="1678953801787" duration="6080000" />
     </task>
     <task id="LOCAL-00001" summary="Preparation de l'environnement de travail">
       <created>1678647361780</created>
@@ -163,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678656138404</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property">
+      <created>1678913803643</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678913803644</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +212,7 @@
     <MESSAGE value="creation branch develop" />
     <MESSAGE value="creation les corps des entites" />
     <MESSAGE value="creation Property entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation Property entity" />
+    <MESSAGE value="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property" />
+    <option name="LAST_COMMIT_MESSAGE" value="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property" />
   </component>
 </project>

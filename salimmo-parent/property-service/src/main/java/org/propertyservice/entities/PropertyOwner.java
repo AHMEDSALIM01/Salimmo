@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,22 +16,30 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Data
 @ToString
-public class PropertyOwner implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "owner_id")
-    private Long id;
+@Table(name = "property_owner")
+@SQLDelete(sql = "UPDATE property_owner SET isDeleted = true")
+@Where(clause = "isDeleted=false")
+public class PropertyOwner extends BaseEntity implements Serializable {
     @OneToMany(mappedBy = "owner")
     private Property property;
+    @Column(nullable = false)
     private String firstName;
+    @Column(nullable = false)
     private String lastName;
+    @Column(nullable = false)
     private String email;
+    @Column(nullable = false)
     private String phone;
+
     private String createdBy;
+
     private String updatedBy;
-    private String deltedBy;
-    private Boolean isDeleted;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+
+    private String deletedBy;
+    private Boolean isDeleted=Boolean.FALSE;
     private LocalDateTime deletedAt;
+    @PreRemove
+    public void deletedAt(){
+        this.deletedAt = LocalDateTime.now();
+    }
 }
