@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="Creation de Response et RequestDto">
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/CityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/ExteriorPropertyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/InnerPropertyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyEnergiesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyLocationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyOwnerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertySurfaceRepository.java" afterDir="false" />
+    <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="Creation of repositories">
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyOwnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyEnergiesServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyLocationServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +27,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -207,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678975522444</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Creation of repositories">
+      <created>1678977065064</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1678977065065</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +250,8 @@
     <MESSAGE value="creation Property entity" />
     <MESSAGE value="creation des entity :&#10;City,PropertyLocation,ExteriorProperty,InnerProperty,PropertyEnergies,PropertySyrface. et une modification sur Property" />
     <MESSAGE value="Creation de Response et RequestDto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creation de Response et RequestDto" />
+    <MESSAGE value="Creation of repositories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creation of repositories" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
