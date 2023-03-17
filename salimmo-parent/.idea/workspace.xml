@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="Creation of repositories">
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyOwnerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyEnergiesServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyLocationServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_03_2023_22_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_03_2023_22_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/PropertyServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/requestsdto/PropertyRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/responsedto/PropertyResponseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/PropertyCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/PropertyCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -60,6 +59,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/corretto-11.0.18/lib/src.zip!/java.base/java/util/Optional.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
   </component>
@@ -72,6 +74,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2MvPBOJvT8qSd7wKeqUa0wRpnSh" />
   <component name="ProjectLevelVcsManager">
@@ -104,7 +109,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reactor",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "spring.configuration.checksum": "681cf87c9504b3135dcfaee43a32fd5e",
     "vue.rearranger.settings.migration": "true"
@@ -126,10 +131,10 @@
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PropertyService">
-    <configuration name="PropertyService" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.PropertyServiceApplication">
+    <configuration name="PropertyServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="property-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.propertyservice.PropertyService" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.propertyservice.PropertyServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,6 +158,7 @@
       <workItem from="1678644954221" duration="7981000" />
       <workItem from="1678659758657" duration="8765000" />
       <workItem from="1678953801787" duration="6080000" />
+      <workItem from="1679040595481" duration="18457000" />
     </task>
     <task id="LOCAL-00001" summary="Preparation de l'environnement de travail">
       <created>1678647361780</created>
@@ -252,6 +258,30 @@
     <MESSAGE value="Creation de Response et RequestDto" />
     <MESSAGE value="Creation of repositories" />
     <option name="LAST_COMMIT_MESSAGE" value="Creation of repositories" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
+          <line>41</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
