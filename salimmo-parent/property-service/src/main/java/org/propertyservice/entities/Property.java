@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 import org.propertyservice.enums.PropertyCategory;
 import org.propertyservice.enums.PropertyType;
@@ -20,8 +19,7 @@ import java.util.UUID;
 @Data
 @ToString
 @Table(name = "property")
-@SQLDelete(sql = "UPDATE property SET isDeleted = true")
-@Where(clause = "isDeleted=false")
+@Where(clause = "deleted=false")
 public class Property extends BaseEntity implements Serializable {
     private UUID ref;
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
@@ -49,11 +47,11 @@ public class Property extends BaseEntity implements Serializable {
     private String createdBy;
     private String updatedBy;
     private String deletedBy;
-    private Boolean isDeleted;
+    private Boolean deleted=false;
     private LocalDateTime deletedAt;
 
-    @PreRemove
-    public void deletedAt(){
-        this.deletedAt = LocalDateTime.now();
+    @PostPersist
+    private void generateRefer(){
+        this.ref = UUID.randomUUID();
     }
 }

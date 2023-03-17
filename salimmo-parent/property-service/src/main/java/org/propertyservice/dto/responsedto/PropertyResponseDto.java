@@ -9,6 +9,7 @@ import org.propertyservice.entities.*;
 import org.propertyservice.enums.PropertyCategory;
 import org.propertyservice.enums.PropertyType;
 
+import java.util.UUID;
 
 
 @AllArgsConstructor
@@ -16,6 +17,7 @@ import org.propertyservice.enums.PropertyType;
 @Data
 @ToString
 public class PropertyResponseDto {
+    private UUID ref;
     @JsonIgnoreProperties("properties")
     private PropertyOwnerResponseDto owner;
     private PropertyCategory category;
@@ -35,4 +37,5 @@ public class PropertyResponseDto {
     private Double fees;
     private Double netPrice;
     private Byte [] images;
+    private Boolean deleted;
 }
