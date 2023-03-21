@@ -2,49 +2,56 @@ package org.propertyservice.services.implementation;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.propertyservice.dto.InnerPropertyDto;
 import org.propertyservice.entities.InnerProperty;
-import org.propertyservice.services.BaseService;
+import org.propertyservice.repositories.InnerPropertyRepository;
+import org.propertyservice.services.InnerPropertyService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class InnerPropertyServiceImplementation implements BaseService<InnerProperty> {
+public class InnerPropertyServiceImplementation implements InnerPropertyService {
+    private final InnerPropertyRepository innerPropertyRepository;
+    private final ModelMapper modelMapper;
     @Override
-    public InnerProperty findById(Long id) {
-        return null;
+    public InnerPropertyDto findById(Long id) {
+        Optional<InnerProperty> innerProperty = innerPropertyRepository.findById(id);
+        return innerProperty.map(value -> modelMapper.map(value, InnerPropertyDto.class)).orElseThrow(() -> new NotFoundException("InnerProperty with id: "+id+" not found"));
     }
 
     @Override
-    public List<InnerProperty> findAll() {
-        return null;
+    public Page<InnerPropertyDto> findAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page,size);
+        Page<InnerProperty> innerProperties = innerPropertyRepository.findAll(pageable);
+        List<InnerPropertyDto> innerPropertyDtoList = innerProperties.getContent().stream().map(p->modelMapper.map(p, InnerPropertyDto.class)).collect(Collectors.toList());
+        return new PageImpl<>(innerPropertyDtoList, innerProperties.getPageable(), innerProperties.getTotalElements());
     }
 
     @Override
-    public Page<InnerProperty> findAll(int page, int size) {
-        return null;
+    public InnerPropertyDto add(InnerPropertyDto innerPropertyDto) {
+        InnerProperty innerProperty = modelMapper.map(innerPropertyDto,InnerProperty.class);
+        InnerProperty savedInnerProperty = innerPropertyRepository.save(innerProperty);
+        return modelMapper.map(savedInnerProperty, InnerPropertyDto.class);
     }
 
     @Override
-    public InnerProperty addOne(InnerProperty innerProperty) {
-        return null;
-    }
-
-    @Override
-    public List<InnerProperty> multipleAdd(List<InnerProperty> t) {
-        return null;
-    }
-
-    @Override
-    public InnerProperty updateOne(InnerProperty innerProperty) {
-        return null;
-    }
-
-    @Override
-    public List<InnerProperty> multipleUpdate(List<InnerProperty> t) {
-        return null;
+    public InnerPropertyDto update(Long id, InnerPropertyDto innerPropertyDto) {
+        InnerProperty innerProperty = innerPropertyRepository.findById(id).orElseThrow(()->new NotFoundException("InnerProperty with id "+id+" Not Found"));
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+        modelMapper.map(innerPropertyDto,innerProperty);
+        InnerProperty updatedInnerProperty = innerPropertyRepository.save(innerProperty);
+        return modelMapper.map(updatedInnerProperty, InnerPropertyDto.class);
     }
 }

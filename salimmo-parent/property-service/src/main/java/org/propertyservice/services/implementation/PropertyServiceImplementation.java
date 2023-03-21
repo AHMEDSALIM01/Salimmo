@@ -3,11 +3,10 @@ package org.propertyservice.services.implementation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.propertyservice.dto.requestsdto.PropertyRequestDto;
-import org.propertyservice.dto.responsedto.PropertyResponseDto;
-import org.propertyservice.entities.Property;
+import org.propertyservice.dto.*;
+import org.propertyservice.entities.*;
 import org.propertyservice.repositories.PropertyRepository;
-import org.propertyservice.services.PropertyService;
+import org.propertyservice.services.*;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -23,43 +22,79 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PropertyServiceImplementation implements PropertyService {
     private final PropertyRepository propertyRepository;
+   // private final PropertyLocationService
+    private final ExteriorPropertyService exteriorPropertyService;
+    private final InnerPropertyService innerPropertyService;
+    private final PropertyEnergiesService propertyEnergiesService;
+    private final PropertyOwnerService propertyOwnerService;
+    private final PropertySurfaceService propertySurfaceService;
     private final ModelMapper modelMapper;
     @Override
-    public PropertyResponseDto findById(Long id) {
+    public PropertyDto findById(Long id) {
         Optional<Property> property = propertyRepository.findById(id);
-        return property.map(value -> modelMapper.map(value, PropertyResponseDto.class)).orElseThrow(() -> new NotFoundException("property not found"));
+        return property.map(value -> modelMapper.map(value, PropertyDto.class)).orElseThrow(() -> new NotFoundException("property not found"));
     }
 
     @Override
-    public List<PropertyResponseDto> findAll() {
-        return new ArrayList<>();
-    }
-
-    @Override
-    public Page<PropertyResponseDto> findAll(int page, int size) {
+    public Page<PropertyDto> findAll(int page, int size) {
         Pageable pageable = PageRequest.of(page,size);
         Page<Property> properties = propertyRepository.findAll(pageable);
-        List<PropertyResponseDto> propertyResponseDtoList = properties.getContent().stream().map(p->modelMapper.map(p,PropertyResponseDto.class)).collect(Collectors.toList());
-        return new PageImpl<>(propertyResponseDtoList, properties.getPageable(), properties.getTotalElements());
+        List<PropertyDto> propertyDtoList = properties.getContent().stream().map(p->modelMapper.map(p, PropertyDto.class)).collect(Collectors.toList());
+        return new PageImpl<>(propertyDtoList, properties.getPageable(), properties.getTotalElements());
     }
 
     @Override
-    public PropertyResponseDto add(PropertyRequestDto propertyRequestDto) {
-        Property property = modelMapper.map(propertyRequestDto,Property.class);
+    public PropertyDto add(PropertyDto propertyDto) {
+        Property property = modelMapper.map(propertyDto,Property.class);
+        if (property.getInnerProperty()==null || property.getPropertyEnergies() == null || property.getPropertySurface() == null || property.getExteriorProperty() == null || property.getOwner() == null){
+            throw new IllegalStateException("Field required !!");
+        }
+        if(property.getPropertyEnergies().getId() == null){
+            PropertyEnergiesDto propertyEnergiesDto = propertyEnergiesService.add(modelMapper.map(property.getPropertyEnergies(),PropertyEnergiesDto.class));
+            property.setPropertyEnergies(modelMapper.map(propertyEnergiesDto,PropertyEnergies.class));
+        }
+        if(property.getExteriorProperty().getId()==null){
+            ExteriorPropertyDto exteriorPropertyDto = exteriorPropertyService.add(modelMapper.map(property.getExteriorProperty(),ExteriorPropertyDto.class));
+            property.setExteriorProperty(modelMapper.map(exteriorPropertyDto,ExteriorProperty.class));
+        }
+        if(property.getInnerProperty().getId()==null){
+            InnerPropertyDto innerPropertyDto = innerPropertyService.add(modelMapper.map(property.getInnerProperty(),InnerPropertyDto.class));
+            property.setInnerProperty(modelMapper.map(innerPropertyDto,InnerProperty.class));
+        }
+        if(property.getPropertySurface().getId()==null){
+            PropertySurfaceDto propertySurfaceDto = propertySurfaceService.add(modelMapper.map(property.getPropertySurface(),PropertySurfaceDto.class));
+            property.setPropertySurface(modelMapper.map(propertySurfaceDto,PropertySurface.class));
+        }
+        if(property.getOwner().getId() == null){
+            PropertyOwnerDto propertyOwnerDto = propertyOwnerService.add(modelMapper.map(property.getOwner(),PropertyOwnerDto.class));
+            property.setOwner(modelMapper.map(propertyOwnerDto,PropertyOwner.class));
+        }
         Property savedProperty = propertyRepository.save(property);
-        return modelMapper.map(savedProperty,PropertyResponseDto.class);
+        PropertyEnergies propertyEnergies = modelMapper.map(propertyEnergiesService.findById(property.getPropertyEnergies().getId()),PropertyEnergies.class);
+        InnerProperty innerProperty = modelMapper.map(innerPropertyService.findById(property.getInnerProperty().getId()),InnerProperty.class);
+        ExteriorProperty exteriorProperty = modelMapper.map(exteriorPropertyService.findById(property.getExteriorProperty().getId()),ExteriorProperty.class);
+        PropertyOwner owner = modelMapper.map(propertyOwnerService.findById(property.getOwner().getId()),PropertyOwner.class);
+        PropertySurface surface = modelMapper.map(propertySurfaceService.findById(property.getPropertySurface().getId()),PropertySurface.class);
+        propertyEnergies.setProperty(savedProperty);
+        innerProperty.setProperty(savedProperty);
+        exteriorProperty.setProperty(savedProperty);
+        owner.setProperties(Set.of(savedProperty));
+        surface.setProperty(savedProperty);
+        propertyEnergiesService.update(propertyEnergies.getId(),modelMapper.map(propertyEnergies, PropertyEnergiesDto.class));
+        innerPropertyService.update(innerProperty.getId(),modelMapper.map(innerProperty, InnerPropertyDto.class));
+        exteriorPropertyService.update(exteriorProperty.getId(),modelMapper.map(exteriorProperty, ExteriorPropertyDto.class));
+        propertyOwnerService.update(owner.getId(),modelMapper.map(owner, PropertyOwnerDto.class));
+        propertySurfaceService.update(surface.getId(),modelMapper.map(surface, PropertySurfaceDto.class));
+        return modelMapper.map(savedProperty, PropertyDto.class);
     }
     
     @Override
-    public PropertyResponseDto update(UUID ref, PropertyRequestDto propertyRequestDto) {
-        if(propertyRepository.findPropertyByRef(ref).isEmpty()){
-            throw new NotFoundException("Property with ref :"+ref+" Not Found");
-        }
-        Property property = propertyRepository.findPropertyByRef(ref).orElseThrow(()->new NotFoundException("Property Not Found"));
+    public PropertyDto update(UUID ref, PropertyDto propertyDto) {
+        Property property = propertyRepository.findPropertyByRef(ref).orElseThrow(()->new NotFoundException("Property with ref "+ref+" Not Found"));
         modelMapper.getConfiguration().setSkipNullEnabled(true);
-        modelMapper.map(propertyRequestDto,property);
+        modelMapper.map(propertyDto,property);
         Property updatedProperty = propertyRepository.save(property);
-        return modelMapper.map(updatedProperty,PropertyResponseDto.class);
+        return modelMapper.map(updatedProperty, PropertyDto.class);
     }
 
     @Override

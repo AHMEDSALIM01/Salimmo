@@ -1,17 +1,18 @@
-package org.propertyservice.dto.requestsdto;
+package org.propertyservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
+import lombok.*;
 import org.propertyservice.enums.HeatingType;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-public class PropertyEnergiesRequestDto {
-    private Long propertyId;
+public class PropertyEnergiesDto {
+    private Long id;
+    //@JsonIgnoreProperties("propertyEnergies")
+    private PropertyDto property;
     private HeatingType heatingType;
     private String hotWater;
     private String electricalInstallation;

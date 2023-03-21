@@ -1,35 +1,33 @@
 package org.propertyservice.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.hibernate.annotations.SQLDelete;
+import lombok.*;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Table(name = "property_owner")
-@SQLDelete(sql = "UPDATE property_owner SET isDeleted = true")
-@Where(clause = "isDeleted=false")
+@Where(clause = "deleted=false")
 public class PropertyOwner extends BaseEntity implements Serializable {
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER,cascade = {CascadeType.MERGE,CascadeType.REMOVE,CascadeType.PERSIST})
     private Set<Property> properties;
-    @Column(nullable = false)
+    @NotBlank
     private String firstName;
-    @Column(nullable = false)
+    @NotBlank
     private String lastName;
-    @Column(nullable = false)
+    @NotBlank
     private String email;
-    @Column(nullable = false)
+    @NotBlank
     private String phone;
 
     private String createdBy;
@@ -37,10 +35,6 @@ public class PropertyOwner extends BaseEntity implements Serializable {
     private String updatedBy;
 
     private String deletedBy;
-    private Boolean isDeleted=Boolean.FALSE;
+    private Boolean deleted=false;
     private LocalDateTime deletedAt;
-    @PreRemove
-    public void deletedAt(){
-        this.deletedAt = LocalDateTime.now();
-    }
 }

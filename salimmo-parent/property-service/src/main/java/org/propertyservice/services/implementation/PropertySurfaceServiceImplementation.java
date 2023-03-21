@@ -2,49 +2,56 @@ package org.propertyservice.services.implementation;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.propertyservice.dto.PropertySurfaceDto;
 import org.propertyservice.entities.PropertySurface;
-import org.propertyservice.services.BaseService;
+import org.propertyservice.repositories.PropertySurfaceRepository;
+import org.propertyservice.services.PropertySurfaceService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class PropertySurfaceServiceImplementation implements BaseService<PropertySurface> {
+public class PropertySurfaceServiceImplementation implements PropertySurfaceService {
+    private final PropertySurfaceRepository propertySurfaceRepository;
+    private final ModelMapper modelMapper;
     @Override
-    public PropertySurface findById(Long id) {
-        return null;
+    public PropertySurfaceDto findById(Long id) {
+        Optional<PropertySurface> propertySurface = propertySurfaceRepository.findById(id);
+        return propertySurface.map(value -> modelMapper.map(value, PropertySurfaceDto.class)).orElseThrow(() -> new NotFoundException("PropertySurface with id :"+id+" not found"));
     }
 
     @Override
-    public List<PropertySurface> findAll() {
-        return null;
+    public Page<PropertySurfaceDto> findAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page,size);
+        Page<PropertySurface> propertiesSurface = propertySurfaceRepository.findAll(pageable);
+        List<PropertySurfaceDto> propertySurfaceDtoList = propertiesSurface.getContent().stream().map(p->modelMapper.map(p, PropertySurfaceDto.class)).collect(Collectors.toList());
+        return new PageImpl<>(propertySurfaceDtoList, propertiesSurface.getPageable(), propertiesSurface.getTotalElements());
     }
 
     @Override
-    public Page<PropertySurface> findAll(int page, int size) {
-        return null;
+    public PropertySurfaceDto add(PropertySurfaceDto propertySurfaceDto) {
+        PropertySurface propertySurface = modelMapper.map(propertySurfaceDto,PropertySurface.class);
+        PropertySurface savedPropertySurface = propertySurfaceRepository.save(propertySurface);
+        return modelMapper.map(savedPropertySurface, PropertySurfaceDto.class);
     }
 
     @Override
-    public PropertySurface addOne(PropertySurface propertySurface) {
-        return null;
+    public PropertySurfaceDto update(Long id, PropertySurfaceDto propertySurfaceDto) {
+        PropertySurface propertySurface = propertySurfaceRepository.findById(id).orElseThrow(()->new NotFoundException("PropertySurface with id "+id+" Not Found"));
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+        modelMapper.map(propertySurfaceDto,propertySurface);
+        PropertySurface updatedPropertySurface = propertySurfaceRepository.save(propertySurface);
+        return modelMapper.map(updatedPropertySurface, PropertySurfaceDto.class);
     }
 
-    @Override
-    public List<PropertySurface> multipleAdd(List<PropertySurface> t) {
-        return null;
-    }
-
-    @Override
-    public PropertySurface updateOne(PropertySurface propertySurface) {
-        return null;
-    }
-
-    @Override
-    public List<PropertySurface> multipleUpdate(List<PropertySurface> t) {
-        return null;
-    }
 }
