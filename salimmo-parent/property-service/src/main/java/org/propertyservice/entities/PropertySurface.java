@@ -1,9 +1,6 @@
 package org.propertyservice.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,10 +8,11 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 public class PropertySurface extends BaseEntity implements Serializable {
-    @OneToOne(mappedBy = "propertySurface", optional = false)
+    @OneToOne(mappedBy = "propertySurface")
     private Property property;
     private Double livingArea;
     private Double groundSurface;

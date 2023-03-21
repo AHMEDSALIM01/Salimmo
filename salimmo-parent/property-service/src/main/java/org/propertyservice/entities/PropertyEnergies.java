@@ -1,9 +1,6 @@
 package org.propertyservice.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.propertyservice.enums.HeatingType;
 
 import javax.persistence.*;
@@ -12,10 +9,11 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 public class PropertyEnergies extends BaseEntity implements Serializable {
-    @OneToOne(mappedBy = "propertyEnergies", optional = false)
+    @OneToOne(mappedBy = "propertyEnergies")
     private Property property;
     @Enumerated(EnumType.STRING)
     private HeatingType heatingType;
@@ -24,4 +22,5 @@ public class PropertyEnergies extends BaseEntity implements Serializable {
     private Double heatingLoads;
     private Double waterLoads;
     private Double electricLoads;
+
 }

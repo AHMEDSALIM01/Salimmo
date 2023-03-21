@@ -1,9 +1,7 @@
 package org.propertyservice.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+
+import lombok.*;
 import org.hibernate.annotations.Where;
 import org.propertyservice.enums.PropertyCategory;
 import org.propertyservice.enums.PropertyType;
@@ -16,13 +14,14 @@ import java.util.UUID;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 @Table(name = "property")
 @Where(clause = "deleted=false")
 public class Property extends BaseEntity implements Serializable {
     private UUID ref;
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "owner_id")
     private PropertyOwner owner;
     @Enumerated(EnumType.STRING)
@@ -30,14 +29,19 @@ public class Property extends BaseEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private PropertyType type;
     @OneToOne
+    //@JsonIgnoreProperties("property")
     private PropertyLocation propertyLocation;
     @OneToOne
+    //@JsonIgnoreProperties("property")
     private InnerProperty innerProperty;
     @OneToOne
+    //@JsonIgnoreProperties("property")
     private PropertySurface propertySurface;
     @OneToOne
+    //@JsonIgnoreProperties("property")
     private PropertyEnergies propertyEnergies;
     @OneToOne
+    //@JsonIgnoreProperties("property")
     private ExteriorProperty exteriorProperty;
     private String title;
     private String description;

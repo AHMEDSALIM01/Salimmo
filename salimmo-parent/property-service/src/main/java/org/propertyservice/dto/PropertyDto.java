@@ -1,11 +1,7 @@
-package org.propertyservice.dto.responsedto;
+package org.propertyservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.propertyservice.entities.*;
+import lombok.*;
 import org.propertyservice.enums.PropertyCategory;
 import org.propertyservice.enums.PropertyType;
 
@@ -14,28 +10,29 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-public class PropertyResponseDto {
+public class PropertyDto {
+    private Long id;
     private UUID ref;
-    @JsonIgnoreProperties("properties")
-    private PropertyOwnerResponseDto owner;
+    @JsonIgnoreProperties("property")
+    private PropertyOwnerDto owner;
     private PropertyCategory category;
     private PropertyType type;
     @JsonIgnoreProperties("property")
-    private PropertyLocationResponseDto propertyLocation;
+    private PropertyLocationDto propertyLocation;
     @JsonIgnoreProperties("property")
-    private InnerProperty innerProperty;
+    private InnerPropertyDto innerProperty;
     @JsonIgnoreProperties("property")
-    private PropertySurface propertySurface;
+    private PropertySurfaceDto propertySurface;
     @JsonIgnoreProperties("property")
-    private PropertyEnergies propertyEnergies;
+    private PropertyEnergiesDto propertyEnergies;
     @JsonIgnoreProperties("property")
-    private ExteriorProperty exteriorProperty;
+    private ExteriorPropertyDto exteriorProperty;
     private String title;
     private String description;
     private Double fees;
     private Double netPrice;
     private Byte [] images;
-    private Boolean deleted;
 }

@@ -1,19 +1,16 @@
-package org.propertyservice.dto.responsedto;
+package org.propertyservice.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.propertyservice.entities.Property;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-public class PropertySurfaceResponseDto {
-    @JsonIgnoreProperties("propertySurface")
-    private PropertyResponseDto property;
+public class PropertySurfaceDto {
+    private Long id;
+    //@JsonIgnoreProperties("propertySurface")
+    private PropertyDto property;
     private Double livingArea;
     private Double groundSurface;
     private Double usefulSurface;

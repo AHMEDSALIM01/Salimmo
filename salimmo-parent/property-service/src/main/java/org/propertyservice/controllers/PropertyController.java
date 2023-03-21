@@ -1,8 +1,7 @@
 package org.propertyservice.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.propertyservice.dto.requestsdto.PropertyRequestDto;
-import org.propertyservice.dto.responsedto.PropertyResponseDto;
+import org.propertyservice.dto.PropertyDto;
 import org.propertyservice.services.PropertyService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -26,7 +25,7 @@ public class PropertyController {
     @GetMapping("/")
     public ResponseEntity<Object> getAll(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10") int size){
         try{
-            Page<PropertyResponseDto> propertyList = propertyService.findAll(page,size);
+            Page<PropertyDto> propertyList = propertyService.findAll(page,size);
             return ResponseEntity.ok().body(propertyList);
         }catch (Exception e){
             return ResponseEntity.internalServerError().body(e.getMessage());
@@ -35,22 +34,22 @@ public class PropertyController {
     @GetMapping("{id}")
     public ResponseEntity<Object> getOneById(@PathVariable Long id){
         try {
-            PropertyResponseDto propertyResponseDto = propertyService.findById(id);
-                return ResponseEntity.accepted().body(propertyResponseDto);
+            PropertyDto propertyDto = propertyService.findById(id);
+                return ResponseEntity.accepted().body(propertyDto);
         }catch (Exception e){
             return ResponseEntity.status(e instanceof NotFoundException ? HttpStatus.NOT_FOUND : HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PostMapping("/")
-    public ResponseEntity<Object> addOne(@RequestBody @Valid PropertyRequestDto propertyRequestDto, BindingResult bindingResult){
+    public ResponseEntity<Object> addOne(@RequestBody @Valid PropertyDto propertyRequestDto, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
         }
         try {
-            PropertyResponseDto propertyResponseDto = propertyService.add(propertyRequestDto);
-            if (propertyResponseDto != null) {
-                return ResponseEntity.accepted().body(propertyResponseDto);
+            PropertyDto propertyDto = propertyService.add(propertyRequestDto);
+            if (propertyDto != null) {
+                return ResponseEntity.accepted().body(propertyDto);
             }
             return ResponseEntity.badRequest().body("");
         }catch (Exception e){
@@ -59,14 +58,14 @@ public class PropertyController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Object> updateOne(@PathVariable UUID id, @RequestBody @Valid PropertyRequestDto propertyRequestDto, BindingResult bindingResult){
+    public ResponseEntity<Object> updateOne(@PathVariable UUID id, @RequestBody @Valid PropertyDto propertyRequestDto, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return ResponseEntity.badRequest().body(bindingResult.getAllErrors());
         }
         try {
-            PropertyResponseDto propertyResponseDto = propertyService.update(id,propertyRequestDto);
-            if (propertyResponseDto != null) {
-                return ResponseEntity.accepted().body(propertyResponseDto);
+            PropertyDto propertyDto = propertyService.update(id,propertyRequestDto);
+            if (propertyDto != null) {
+                return ResponseEntity.accepted().body(propertyDto);
             }
             return ResponseEntity.badRequest().body("");
         }catch (Exception e){

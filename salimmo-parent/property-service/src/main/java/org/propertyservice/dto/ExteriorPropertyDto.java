@@ -1,19 +1,19 @@
-package org.propertyservice.dto.requestsdto;
+package org.propertyservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-public class ExteriorPropertyRequestDto {
-    private Long propertyId;
+public class ExteriorPropertyDto {
+    private Long id;
+    //@JsonIgnoreProperties("exteriorProperty")
+    private PropertyDto property;
     @DateTimeFormat(pattern = "yyyy")
     private Date yearConstruction;
     private String windows;

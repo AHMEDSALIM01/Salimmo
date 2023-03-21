@@ -1,17 +1,17 @@
-package org.propertyservice.dto.requestsdto;
+package org.propertyservice.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-public class InnerPropertyRequestDto {
-    private Long propertyId;
+public class InnerPropertyDto {
+    private Long id;
+    //@JsonIgnoreProperties("innerProperty")
+    private PropertyDto property;
     private int nbrOfLevels;
     private int nbrOfPieces;
     private int nbrOfRooms;

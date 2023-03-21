@@ -2,59 +2,77 @@ package org.propertyservice.services.implementation;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
+import org.propertyservice.dto.PropertyOwnerDto;
 import org.propertyservice.entities.PropertyOwner;
+import org.propertyservice.repositories.PropertyOwnerRepository;
 import org.propertyservice.services.PropertyOwnerService;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.webjars.NotFoundException;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class PropertyOwnerServiceImplementation implements PropertyOwnerService {
+    private final PropertyOwnerRepository propertyOwnerRepository;
+    private final ModelMapper modelMapper;
     @Override
-    public PropertyOwner findById(Long id) {
-        return null;
+    public PropertyOwnerDto findById(Long id) {
+        Optional<PropertyOwner> owner = propertyOwnerRepository.findById(id);
+        return owner.map(value -> modelMapper.map(value, PropertyOwnerDto.class)).orElseThrow(() -> new NotFoundException("owner with id "+id+" not found"));
     }
 
     @Override
-    public List<PropertyOwner> findAll() {
-        return null;
+    public Page<PropertyOwnerDto> findAll(int page, int size) {
+        Pageable pageable = PageRequest.of(page,size);
+        Page<PropertyOwner> owners = propertyOwnerRepository.findAll(pageable);
+        List<PropertyOwnerDto> propertyResponseDtoList = owners.getContent().stream().map(p->modelMapper.map(p, PropertyOwnerDto.class)).collect(Collectors.toList());
+        return new PageImpl<>(propertyResponseDtoList, owners.getPageable(), owners.getTotalElements());
     }
 
     @Override
-    public Page<PropertyOwner> findAll(int page, int size) {
-        return null;
+    public PropertyOwnerDto add(PropertyOwnerDto propertyOwnerRequestDto) {
+        PropertyOwner owner = modelMapper.map(propertyOwnerRequestDto,PropertyOwner.class);
+        PropertyOwner savedOwner = propertyOwnerRepository.save(owner);
+        return modelMapper.map(savedOwner, PropertyOwnerDto.class);
     }
 
     @Override
-    public PropertyOwner addOne(PropertyOwner propertyOwner) {
-        return null;
+    public PropertyOwnerDto update(Long id, PropertyOwnerDto propertyOwnerRequestDto) {
+        PropertyOwner owner = propertyOwnerRepository.findById(id).orElseThrow(()->new NotFoundException("Owner with id: "+id+" Not Found"));
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+        modelMapper.map(propertyOwnerRequestDto,owner);
+        PropertyOwner updatedProperty = propertyOwnerRepository.save(owner);
+        return modelMapper.map(updatedProperty, PropertyOwnerDto.class);
     }
 
     @Override
-    public List<PropertyOwner> multipleAdd(List<PropertyOwner> owners) {
-        return null;
+    public String deleteOneById(Long id) {
+        if(propertyOwnerRepository.findById(id).isEmpty()){
+            throw new NotFoundException("Owner with Id : "+id+" Not Found");
+        }
+        propertyOwnerRepository.deleteById(id);
+        return "Owner deleted successfully";
     }
 
     @Override
-    public PropertyOwner updateOne(PropertyOwner propertyOwner) {
-        return null;
-    }
-
-    @Override
-    public List<PropertyOwner> multipleUpdate(List<PropertyOwner> owners) {
-        return null;
-    }
-
-    @Override
-    public PropertyOwner deleteOneById(Long id) {
-        return null;
-    }
-
-    @Override
-    public List<PropertyOwner> deleteByMultipleId(List<Long> ids) {
-        return null;
+    public Map<String,String> deleteMultipleById(List<Long> ids) {
+        Map<String,String> deleteList = new HashMap<>();
+        ids.forEach(id-> {
+            if(propertyOwnerRepository.findById(id).isPresent()){
+                propertyOwnerRepository.deleteById(id);
+                deleteList.put("Owner with id "+id+" deleted successfully","OK");
+            }else{
+                deleteList.put("Owner with id "+id+" Not found","NOT_FOUND");
+            }
+        });
+        return deleteList;
     }
 }

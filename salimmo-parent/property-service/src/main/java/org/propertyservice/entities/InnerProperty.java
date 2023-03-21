@@ -1,9 +1,6 @@
 package org.propertyservice.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -11,10 +8,11 @@ import java.io.Serializable;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
 public class InnerProperty extends BaseEntity implements Serializable {
-    @OneToOne(mappedBy = "innerProperty", optional = false)
+    @OneToOne(mappedBy = "innerProperty")
     private Property property;
     private int nbrOfLevels;
     private int nbrOfPieces;
