@@ -7,6 +7,7 @@ import org.propertyservice.dto.PropertyOwnerDto;
 import org.propertyservice.entities.PropertyOwner;
 import org.propertyservice.repositories.PropertyOwnerRepository;
 import org.propertyservice.services.PropertyOwnerService;
+import org.propertyservice.validators.OwnerValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PropertyOwnerServiceImplementation implements PropertyOwnerService {
     private final PropertyOwnerRepository propertyOwnerRepository;
+    private final OwnerValidator ownerValidator;
     private final ModelMapper modelMapper;
     @Override
     public PropertyOwnerDto findById(Long id) {
@@ -39,6 +41,9 @@ public class PropertyOwnerServiceImplementation implements PropertyOwnerService 
 
     @Override
     public PropertyOwnerDto add(PropertyOwnerDto propertyOwnerRequestDto) {
+        if(Boolean.FALSE.equals(ownerValidator.isValid(propertyOwnerRequestDto))){
+            throw new IllegalStateException(ownerValidator.getMessage());
+        }
         PropertyOwner owner = modelMapper.map(propertyOwnerRequestDto,PropertyOwner.class);
         PropertyOwner savedOwner = propertyOwnerRepository.save(owner);
         return modelMapper.map(savedOwner, PropertyOwnerDto.class);

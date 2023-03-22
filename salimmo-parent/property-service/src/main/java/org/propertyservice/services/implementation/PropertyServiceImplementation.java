@@ -7,6 +7,7 @@ import org.propertyservice.dto.*;
 import org.propertyservice.entities.*;
 import org.propertyservice.repositories.PropertyRepository;
 import org.propertyservice.services.*;
+import org.propertyservice.validators.PropertyValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @RequiredArgsConstructor
 public class PropertyServiceImplementation implements PropertyService {
+    private final PropertyValidator propertyValidator;
     private final PropertyRepository propertyRepository;
    // private final PropertyLocationService
     private final ExteriorPropertyService exteriorPropertyService;
@@ -45,10 +47,10 @@ public class PropertyServiceImplementation implements PropertyService {
 
     @Override
     public PropertyDto add(PropertyDto propertyDto) {
-        Property property = modelMapper.map(propertyDto,Property.class);
-        if (property.getInnerProperty()==null || property.getPropertyEnergies() == null || property.getPropertySurface() == null || property.getExteriorProperty() == null || property.getOwner() == null){
-            throw new IllegalStateException("Field required !!");
+        if(Boolean.FALSE.equals(propertyValidator.isValid(propertyDto))){
+            throw new IllegalStateException(propertyValidator.getMessage());
         }
+        Property property = modelMapper.map(propertyDto,Property.class);
         if(property.getPropertyEnergies().getId() == null){
             PropertyEnergiesDto propertyEnergiesDto = propertyEnergiesService.add(modelMapper.map(property.getPropertyEnergies(),PropertyEnergiesDto.class));
             property.setPropertyEnergies(modelMapper.map(propertyEnergiesDto,PropertyEnergies.class));
@@ -87,7 +89,7 @@ public class PropertyServiceImplementation implements PropertyService {
         propertySurfaceService.update(surface.getId(),modelMapper.map(surface, PropertySurfaceDto.class));
         return modelMapper.map(savedProperty, PropertyDto.class);
     }
-    
+
     @Override
     public PropertyDto update(UUID ref, PropertyDto propertyDto) {
         Property property = propertyRepository.findPropertyByRef(ref).orElseThrow(()->new NotFoundException("Property with ref "+ref+" Not Found"));
