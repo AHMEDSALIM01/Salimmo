@@ -29,19 +29,14 @@ public class Property extends BaseEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     private PropertyType type;
     @OneToOne
-    //@JsonIgnoreProperties("property")
     private PropertyLocation propertyLocation;
     @OneToOne
-    //@JsonIgnoreProperties("property")
     private InnerProperty innerProperty;
     @OneToOne
-    //@JsonIgnoreProperties("property")
     private PropertySurface propertySurface;
     @OneToOne
-    //@JsonIgnoreProperties("property")
     private PropertyEnergies propertyEnergies;
     @OneToOne
-    //@JsonIgnoreProperties("property")
     private ExteriorProperty exteriorProperty;
     private String title;
     private String description;

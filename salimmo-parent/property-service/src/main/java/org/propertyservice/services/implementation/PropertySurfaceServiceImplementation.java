@@ -7,6 +7,7 @@ import org.propertyservice.dto.PropertySurfaceDto;
 import org.propertyservice.entities.PropertySurface;
 import org.propertyservice.repositories.PropertySurfaceRepository;
 import org.propertyservice.services.PropertySurfaceService;
+import org.propertyservice.validators.SurfaceValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PropertySurfaceServiceImplementation implements PropertySurfaceService {
     private final PropertySurfaceRepository propertySurfaceRepository;
+    private final SurfaceValidator surfaceValidator;
     private final ModelMapper modelMapper;
     @Override
     public PropertySurfaceDto findById(Long id) {
@@ -40,6 +42,9 @@ public class PropertySurfaceServiceImplementation implements PropertySurfaceServ
 
     @Override
     public PropertySurfaceDto add(PropertySurfaceDto propertySurfaceDto) {
+        if(Boolean.FALSE.equals(surfaceValidator.isValid(propertySurfaceDto))){
+            throw new IllegalStateException(surfaceValidator.getMessage());
+        }
         PropertySurface propertySurface = modelMapper.map(propertySurfaceDto,PropertySurface.class);
         PropertySurface savedPropertySurface = propertySurfaceRepository.save(propertySurface);
         return modelMapper.map(savedPropertySurface, PropertySurfaceDto.class);

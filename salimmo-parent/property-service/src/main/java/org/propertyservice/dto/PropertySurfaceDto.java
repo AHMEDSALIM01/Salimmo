@@ -9,7 +9,6 @@ import lombok.*;
 @ToString
 public class PropertySurfaceDto {
     private Long id;
-    //@JsonIgnoreProperties("propertySurface")
     private PropertyDto property;
     private Double livingArea;
     private Double groundSurface;
