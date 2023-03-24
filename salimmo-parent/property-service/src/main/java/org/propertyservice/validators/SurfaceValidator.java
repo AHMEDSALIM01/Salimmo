@@ -9,6 +9,10 @@ import org.springframework.stereotype.Component;
 public class SurfaceValidator {
     private String message;
     public Boolean isValid(PropertySurfaceDto propertySurfaceDto){
-       return false;
+        if(propertySurfaceDto.getSquareArea() <30){
+            this.message = "Invalid Surface";
+            return false;
+        }
+        return true;
     }
 }

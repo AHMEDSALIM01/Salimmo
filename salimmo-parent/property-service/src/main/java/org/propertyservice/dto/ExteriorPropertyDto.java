@@ -12,7 +12,6 @@ import java.util.Date;
 @ToString
 public class ExteriorPropertyDto {
     private Long id;
-    //@JsonIgnoreProperties("exteriorProperty")
     private PropertyDto property;
     @DateTimeFormat(pattern = "yyyy")
     private Date yearConstruction;
