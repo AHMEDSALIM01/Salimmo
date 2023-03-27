@@ -1,14 +1,6 @@
 
 á
 Wproperty-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java,3\7\379bac45a0f686fd9550fc31d702601919108479
-{
-Kproperty-service/src/main/java/org/propertyservice/entities/BaseEntity.java,1\0\1015a4cda477bab835c8466ac7a4abe45a31d21a
-u
-Eproperty-service/src/main/java/org/propertyservice/entities/City.java,d\3\d3721ec078e50baa83cdd48efc051e0397cda0c5
-s
-Cproperty-service/src/main/java/org/propertyservice/dto/CityDto.java,8\b\8b8035b1ee837695b6637f7e2abb30bcb43cc81f
-Å
-Qproperty-service/src/main/java/org/propertyservice/entities/ExteriorProperty.java,2\b\2b1ad0cc1b84beb4417405dc1f9a8b39e48eee65
 è
 _property-service/src/main/java/org/propertyservice/repositories/ExteriorPropertyRepository.java,b\9\b985f8e02d5540d05a450400f8a4aa929b34a7c6
 à
@@ -23,8 +15,6 @@ Lproperty-service/src/main/java/org/propertyservice/dto/InnerPropertyDto.java,6
 \property-service/src/main/java/org/propertyservice/repositories/InnerPropertyRepository.java,1\6\16ec4ff8fb3a97fb314aa83b5a5c13488ed02112
 Ö
 Uproperty-service/src/main/java/org/propertyservice/services/InnerPropertyService.java,7\a\7a50192fde5e85a641612109cc38cb99d7149ce1
-¢
-rproperty-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java,8\a\8aa9e8cf6882fb4133b78b95eee3d01843db3cef
 Å
 Qproperty-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java,3\3\33b593a9589be1efddcfe28910ce15903146311c
 é
@@ -37,10 +27,6 @@ _property-service/src/main/java/org/propertyservice/repositories/PropertyEnergie
 Xproperty-service/src/main/java/org/propertyservice/services/PropertyEnergiesService.java,7\a\7a6329ed51fbd1c806c4359103a61fee7cb8a562
 •
 uproperty-service/src/main/java/org/propertyservice/services/implementation/PropertyEnergiesServiceImplementation.java,3\f\3ff7ef5c79231f07522568e59fc1d3636a4dbc33
-Å
-Qproperty-service/src/main/java/org/propertyservice/entities/PropertyLocation.java,4\1\411fa10164bc0482ddde548a2da108f0dff029ec
-
-Oproperty-service/src/main/java/org/propertyservice/dto/PropertyLocationDto.java,8\6\860147c289eed8eb0ac02a4da1bf018ec13beca7
 è
 _property-service/src/main/java/org/propertyservice/repositories/PropertyLocationRepository.java,f\1\f1fdb7eb90e76b2dca5abe6bc34910d3e92e723e
 ã
@@ -55,8 +41,6 @@ Pproperty-service/src/main/java/org/propertyservice/entities/PropertySurface.jav
 ^property-service/src/main/java/org/propertyservice/repositories/PropertySurfaceRepository.java,b\a\ba1bfbd07998f7af7cfa8e4d173a4e17d9a617e5
 á
 Wproperty-service/src/main/java/org/propertyservice/services/PropertySurfaceService.java,5\3\539541734d6ac8b342546b804f781249885379b8
-É
-Sproperty-service/src/main/java/org/propertyservice/repositories/CityRepository.java,5\8\58e97891ba4a40622e23f3bec27206947bf5c1f3
 Å
 Qproperty-service/src/main/java/org/propertyservice/validators/OwnerValidator.java,b\b\bb90113e7e921df84f8bc5ba2c75ac47bf2d12ff
 Ñ
@@ -67,7 +51,5 @@ C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 ~
 Nproperty-service/src/main/java/org/propertyservice/entities/PropertyOwner.java,0\e\0e439a07a4224362edcbee410f70b558c133f394
-w
-Gproperty-service/src/main/java/org/propertyservice/dto/PropertyDto.java,2\9\295173de804c2dc76382096c27c0a1f5f472dc3f
 |
 Lproperty-service/src/main/java/org/propertyservice/dto/PropertyOwnerDto.java,c\9\c96cf9752a0bc57c843a1eaeeb21a2a05f0a794a
