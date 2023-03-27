@@ -14,8 +14,8 @@ import org.springframework.security.web.authentication.session.SessionAuthentica
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     private static final String AGENT_IMMOBOLIER = "AGENT_IMMOBILIER";
-    private static final String API_V_1_PROPERTY = "api/v1/property/";
-    private static final String API_V_1_PROPERTY_ID = "api/v1/property/{id}";
+    private static final String API_V_1_PROPERTY = "/api/v1/property/";
+    private static final String API_V_1_PROPERTY_ID = "/api/v1/property/{id}";
     @Override
     protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
         return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
@@ -31,9 +31,9 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         super.configure(http);
         http.csrf().disable();
         http.authorizeRequests().antMatchers(HttpMethod.GET,"/swagger-ui/**", API_V_1_PROPERTY,API_V_1_PROPERTY_ID).permitAll();
-        http.authorizeRequests().antMatchers(HttpMethod.POST, API_V_1_PROPERTY).hasRole(AGENT_IMMOBOLIER);
-        http.authorizeRequests().antMatchers(HttpMethod.DELETE, API_V_1_PROPERTY,API_V_1_PROPERTY_ID).hasAnyRole(AGENT_IMMOBOLIER,"ADMIN");
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, API_V_1_PROPERTY).hasRole(AGENT_IMMOBOLIER);
+        http.authorizeRequests().antMatchers(HttpMethod.POST, API_V_1_PROPERTY).hasAuthority(AGENT_IMMOBOLIER);
+        http.authorizeRequests().antMatchers(HttpMethod.DELETE, API_V_1_PROPERTY,API_V_1_PROPERTY_ID).hasAnyAuthority(AGENT_IMMOBOLIER,"ADMIN");
+        http.authorizeRequests().antMatchers(HttpMethod.PUT, API_V_1_PROPERTY).hasAuthority(AGENT_IMMOBOLIER);
         http.authorizeRequests().anyRequest().authenticated();
     }
 }

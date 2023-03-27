@@ -3,9 +3,12 @@ package org.propertyservice.services.implementation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
+import org.propertyservice.dto.CityDto;
 import org.propertyservice.dto.PropertyLocationDto;
+import org.propertyservice.entities.City;
 import org.propertyservice.entities.PropertyLocation;
 import org.propertyservice.repositories.PropertyLocationRepository;
+import org.propertyservice.services.CityService;
 import org.propertyservice.services.PropertyLocationService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -16,6 +19,7 @@ import org.webjars.NotFoundException;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,6 +27,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class PropertyLocationServiceImplementation implements PropertyLocationService {
     private final PropertyLocationRepository propertyLocationRepository;
+    private final CityService cityService;
     private final ModelMapper modelMapper;
     @Override
     public Page<PropertyLocationDto> findAll(int page, int size) {
@@ -42,6 +47,12 @@ public class PropertyLocationServiceImplementation implements PropertyLocationSe
     public PropertyLocationDto add(PropertyLocationDto propertyLocationDto) {
         PropertyLocation propertyLocation = modelMapper.map(propertyLocationDto,PropertyLocation.class);
         PropertyLocation savedLocation = propertyLocationRepository.save(propertyLocation);
+        CityDto cityDto = cityService.findById(propertyLocationDto.getCity().getId());
+        if(cityDto != null){
+            City city = modelMapper.map(cityDto,City.class);
+            city.setPropertyLocations(Set.of(savedLocation));
+            cityService.update(city.getId(),modelMapper.map(city,CityDto.class));
+        }
         return modelMapper.map(savedLocation,PropertyLocationDto.class);
     }
 

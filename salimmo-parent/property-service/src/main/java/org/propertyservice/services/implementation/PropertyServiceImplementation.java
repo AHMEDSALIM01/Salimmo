@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.webjars.NotFoundException;
 
 import java.util.*;
@@ -46,7 +47,7 @@ public class PropertyServiceImplementation implements PropertyService {
     }
 
     @Override
-    public PropertyDto add(PropertyDto propertyDto) {
+    public PropertyDto add(PropertyDto propertyDto, MultipartFile [] files) {
         if(Boolean.FALSE.equals(propertyValidator.isValid(propertyDto))){
             throw new IllegalStateException(propertyValidator.getMessage());
         }
