@@ -11,7 +11,7 @@ import java.util.Set;
 @ToString
 public class CityDto {
     private Long id;
-    private Set<PropertyLocationDto> propertyLocationDtoSet;
+    private Set<PropertyLocationDto> propertyLocation;
     private String name;
     private String latitude;
     private String longitude;
