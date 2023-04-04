@@ -1,7 +1,7 @@
-import { Innerproperty } from './innerproperty';
+import { InnerPropertyDto } from './innerPropertyDto';
 
 describe('Innerproperty', () => {
   it('should create an instance', () => {
-    expect(new Innerproperty()).toBeTruthy();
+    expect(new InnerPropertyDto()).toBeTruthy();
   });
 });

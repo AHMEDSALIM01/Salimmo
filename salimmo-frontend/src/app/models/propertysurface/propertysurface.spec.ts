@@ -1,7 +1,7 @@
-import { Propertysurface } from './propertysurface';
+import { PropertySurfaceDto } from './propertySurfaceDto';
 
 describe('Propertysurface', () => {
   it('should create an instance', () => {
-    expect(new Propertysurface()).toBeTruthy();
+    expect(new PropertySurfaceDto()).toBeTruthy();
   });
 });

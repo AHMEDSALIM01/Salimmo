@@ -1,7 +1,7 @@
-import { Propertylocation } from './propertylocation';
+import { PropertyLocationDto } from './propertyLocationDto';
 
 describe('Propertylocation', () => {
   it('should create an instance', () => {
-    expect(new Propertylocation()).toBeTruthy();
+    expect(new PropertyLocationDto()).toBeTruthy();
   });
 });

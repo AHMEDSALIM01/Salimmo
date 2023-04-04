@@ -1,4 +1,4 @@
-export class Exteriorproperty {
+export class ExteriorPropertyDto {
   yearConstruction!:Date;
   windows!:string;
   shutter!:string;
