@@ -22,6 +22,7 @@ public class InnerProperty extends BaseEntity implements Serializable {
     private int nbrOfShowerRooms;
     private int nbrOfShowerRoomsGroundFloor;
     private int nbrOfBathrooms;
+    private int nbrOfBathroomsGroundFloor;
     private int nbrOfToilets;
     private int nbrOfToiletsGroundFloor;
     private String kitchenType;
