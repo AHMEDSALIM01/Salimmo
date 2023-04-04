@@ -1,9 +1,9 @@
-import {Property} from "../property/property";
+import {PropertyDto} from "../property/propertyDto";
 import {HeatingType} from "../enums/heating-type";
 
-export class Propertyenrgies {
+export class PropertyEnergiesDto {
   id!:number;
-  property!:Property;
+  property!:PropertyDto;
   heatingType!:HeatingType;
   hotWater!:string;
   electricalInstallation!:string;

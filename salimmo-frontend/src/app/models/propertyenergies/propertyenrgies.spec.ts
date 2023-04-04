@@ -1,7 +1,7 @@
-import { Propertyenrgies } from './propertyenrgies';
+import { PropertyEnergiesDto } from './propertyEnergiesDto';
 
 describe('Propertyenrgies', () => {
   it('should create an instance', () => {
-    expect(new Propertyenrgies()).toBeTruthy();
+    expect(new PropertyEnergiesDto()).toBeTruthy();
   });
 });

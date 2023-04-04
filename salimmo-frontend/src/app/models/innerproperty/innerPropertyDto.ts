@@ -1,8 +1,8 @@
-import {Property} from "../property/property";
+import {PropertyDto} from "../property/propertyDto";
 
-export class Innerproperty {
+export class InnerPropertyDto {
   id!:number;
-  property!:Property;
+  property!:PropertyDto;
   nbrOfLevels!:number;
   nbrOfPieces!:number;
   nbrOfRooms!:number;

@@ -1,7 +1,7 @@
-import { Exteriorproperty } from './exteriorproperty';
+import { ExteriorPropertyDto } from './exteriorPropertyDto';
 
 describe('Exteriorproperty', () => {
   it('should create an instance', () => {
-    expect(new Exteriorproperty()).toBeTruthy();
+    expect(new ExteriorPropertyDto()).toBeTruthy();
   });
 });

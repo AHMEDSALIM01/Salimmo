@@ -1,7 +1,7 @@
-import { City } from './city';
+import { CityDto } from './cityDto';
 
 describe('City', () => {
   it('should create an instance', () => {
-    expect(new City()).toBeTruthy();
+    expect(new CityDto()).toBeTruthy();
   });
 });
