@@ -13,7 +13,7 @@ import java.util.Date;
 public class ExteriorPropertyDto {
     private Long id;
     private PropertyDto property;
-    @DateTimeFormat(pattern = "yyyy")
+    @DateTimeFormat(pattern = "YYYY")
     private Date yearConstruction;
     private String windows;
     private String shutter;
