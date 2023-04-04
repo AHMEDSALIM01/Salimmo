@@ -5,61 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/karma.conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/login/login.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/login/login.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/login/login.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/login/login.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/register/register.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/register/register.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/register/register.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/register/register.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/exteriorproperty/exteriorproperty.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/exteriorproperty/exteriorproperty.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/innerproperty/innerproperty.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/innerproperty/innerproperty.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertyenergies/propertyenergies.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertyenergies/propertyenergies.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertylocation/propertylocation.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertylocation/propertylocation.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertyowner/propertyowner.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertyowner/propertyowner.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertysurface/propertysurface.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/propertysurface/propertysurface.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/environments/environment.prod.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/environments/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/polyfills.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/tsconfig.spec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyenergies/propertyenrgies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyenergies/propertyenrgies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyEnergiesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyEnergiesDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

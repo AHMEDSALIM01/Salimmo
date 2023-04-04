@@ -1,7 +1,7 @@
-import { Propertyowner } from './propertyowner';
+import { PropertyOwner } from './propertyOwner';
 
 describe('Propertyowner', () => {
   it('should create an instance', () => {
-    expect(new Propertyowner()).toBeTruthy();
+    expect(new PropertyOwner()).toBeTruthy();
   });
 });

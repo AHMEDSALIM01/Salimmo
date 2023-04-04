@@ -11,7 +11,6 @@ import org.propertyservice.enums.HeatingType;
 @ToString
 public class PropertyEnergiesDto {
     private Long id;
-    //@JsonIgnoreProperties("propertyEnergies")
     private PropertyDto property;
     private HeatingType heatingType;
     private String hotWater;

@@ -10,7 +10,6 @@ import lombok.*;
 @ToString
 public class InnerPropertyDto {
     private Long id;
-    //@JsonIgnoreProperties("innerProperty")
     private PropertyDto property;
     private int nbrOfLevels;
     private int nbrOfPieces;
@@ -20,6 +19,7 @@ public class InnerPropertyDto {
     private int nbrOfShowerRooms;
     private int nbrOfShowerRoomsGroundFloor;
     private int nbrOfBathrooms;
+    private int nbrOfBathroomsGroundFloor;
     private int nbrOfToilets;
     private int nbrOfToiletsGroundFloor;
     private String kitchenType;
