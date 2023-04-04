@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorproperty.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorproperty.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/ExteriorPropertyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/ExteriorPropertyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyenergies/propertyenrgies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyenergies/propertyenrgies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyEnergiesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyEnergiesDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

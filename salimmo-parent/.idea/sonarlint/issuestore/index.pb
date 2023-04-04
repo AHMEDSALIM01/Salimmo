@@ -7,20 +7,12 @@ _property-service/src/main/java/org/propertyservice/repositories/ExteriorPropert
 Xproperty-service/src/main/java/org/propertyservice/services/ExteriorPropertyService.java,7\9\79105f2449e150e6f936bdf70f7927f1f7e61bd9
 •
 uproperty-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java,d\b\dbfb1ca4be0bab832651ab2df6186ec2f4370202
-~
-Nproperty-service/src/main/java/org/propertyservice/entities/InnerProperty.java,e\3\e39c3c7459dc13653be4ce3e9960b7a4adeb5d1c
-|
-Lproperty-service/src/main/java/org/propertyservice/dto/InnerPropertyDto.java,6\4\643f6ee4c6225f3044c5e9e112416552cbae585c
 å
 \property-service/src/main/java/org/propertyservice/repositories/InnerPropertyRepository.java,1\6\16ec4ff8fb3a97fb314aa83b5a5c13488ed02112
 Ö
 Uproperty-service/src/main/java/org/propertyservice/services/InnerPropertyService.java,7\a\7a50192fde5e85a641612109cc38cb99d7149ce1
-Å
-Qproperty-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java,3\3\33b593a9589be1efddcfe28910ce15903146311c
 é
 ^property-service/src/main/java/org/propertyservice/controllers/PropertyEnergiesController.java,3\b\3bed2a940c79e0a10ac3e2069b40c82dfc006523
-
-Oproperty-service/src/main/java/org/propertyservice/dto/PropertyEnergiesDto.java,d\8\d8ce1e731e3f3943ad77e29001e33257127443b7
 è
 _property-service/src/main/java/org/propertyservice/repositories/PropertyEnergiesRepository.java,2\a\2afb0ca8fb435059136b687bd5b7b589ac3d223d
 à
@@ -51,5 +43,3 @@ C
 api-gateway/pom.xml,2\b\2bfa2b108f2439e99e004f4085b58c22cf995f73
 ~
 Nproperty-service/src/main/java/org/propertyservice/entities/PropertyOwner.java,0\e\0e439a07a4224362edcbee410f70b558c133f394
-|
-Lproperty-service/src/main/java/org/propertyservice/dto/PropertyOwnerDto.java,c\9\c96cf9752a0bc57c843a1eaeeb21a2a05f0a794a
