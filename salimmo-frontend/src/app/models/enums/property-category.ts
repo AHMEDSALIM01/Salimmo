@@ -1,2 +1,6 @@
 export enum PropertyCategory {
+  RESIDENTIAL = "RESIDENTIAL",
+  COMMERCIAL = "COMMERCIAL",
+  INDUSTRIAL = "INDUSTRIAL",
+  GROUNDS = "GROUNDS"
 }
