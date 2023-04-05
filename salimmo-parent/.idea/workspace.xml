@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/enums/property-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/enums/property-type.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/PropertyStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/PropertyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/enums/PropertyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/validators/PropertyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/validators/PropertyValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +20,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

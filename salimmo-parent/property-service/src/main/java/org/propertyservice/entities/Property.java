@@ -4,6 +4,7 @@ package org.propertyservice.entities;
 import lombok.*;
 import org.hibernate.annotations.Where;
 import org.propertyservice.enums.PropertyCategory;
+import org.propertyservice.enums.PropertyStatus;
 import org.propertyservice.enums.PropertyType;
 
 import javax.persistence.*;
@@ -43,6 +44,7 @@ public class Property extends BaseEntity implements Serializable {
     private Double fees;
     private Double netPrice;
     private Byte [] images;
+    private PropertyStatus status;
     private String createdBy;
     private String updatedBy;
     private String deletedBy;

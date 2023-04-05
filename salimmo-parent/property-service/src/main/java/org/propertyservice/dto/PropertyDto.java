@@ -3,6 +3,7 @@ package org.propertyservice.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.propertyservice.enums.PropertyCategory;
+import org.propertyservice.enums.PropertyStatus;
 import org.propertyservice.enums.PropertyType;
 
 import java.util.UUID;
@@ -35,4 +36,5 @@ public class PropertyDto {
     private Double fees;
     private Double netPrice;
     private Byte [] images;
+    private PropertyStatus status;
 }

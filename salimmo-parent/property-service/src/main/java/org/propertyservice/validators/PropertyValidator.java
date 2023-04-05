@@ -2,6 +2,7 @@ package org.propertyservice.validators;
 
 import lombok.Getter;
 import org.propertyservice.dto.PropertyDto;
+import org.propertyservice.enums.PropertyStatus;
 import org.springframework.stereotype.Component;
 
 
@@ -34,10 +35,10 @@ public class PropertyValidator {
             this.message = "Category is required !";
             return false;
         }
-        /*if(propertyDto.getType() == null){
+        if(propertyDto.getType() == null){
             this.message = "Type is required !";
             return false;
-       }*/
+       }
         if(propertyDto.getTitle() == null){
             this.message = "Title is required !";
             return false;
@@ -64,6 +65,14 @@ public class PropertyValidator {
         }
         if(propertyDto.getFees()<100){
             this.message = "Fees is invalid, the min fees is 100 !";
+            return false;
+        }
+        if(propertyDto.getStatus() == null){
+            this.message = "Property status is required";
+            return false;
+        }
+        if(!propertyDto.getStatus().equals(PropertyStatus.valueOf("RENT")) || !propertyDto.getStatus().equals(PropertyStatus.valueOf("SELL"))){
+            this.message = "Property status invalid";
             return false;
         }
         this.message = "";
