@@ -1,0 +1,72 @@
+<div class="w-full h-96 relative z-0 bg-fixed bg-black" style="background-image: url(assets/images/home_details.png)">
+  <div class="absolute -z-10 w-full h-full bg-indigo-950 opacity-50">
+  </div>
+  <div class="w-full p-3.5 z-20 lg:p-0 h-96 flex items-center flex-col justify-evenly">
+    <h1 class="text-gray-100 text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-5xl font-semibold">Find your future home</h1>
+    <form class="flex relative p-3 flex-col md:flex-row bg-white rounded-md">
+      <div class="relative z-0 mb-6 md:me-2 group">
+        <input type="text" name="city" id="city" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600" placeholder=" "/>
+        <label for="city" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">City</label>
+      </div>
+      <div class="relative z-0 mb-6 md:me-2 group">
+        <select name="property_type" id="property_type" class="block ps-2 py-2.5 w-full mt-3 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600">
+          <option>Property type</option>
+          <option>Apartment</option>
+          <option>House</option>
+        </select>
+        <label for="property_type" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Property type</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="text" name="min_price" id="min_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="min_price" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Min Price</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="text" name="max_price" id="max_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="max_price" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Max Price</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="number" min="1" max="7" name="Bed" id="nbr_of_rooms" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="nbr_of_rooms" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bed</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="number" min="1" max="7" name="Bed" id="nbr_of_bath" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <label for="nbr_of_bath" class="absolute font-bold text-lg text-blue-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bath</label>
+      </div>
+      <div class="h-full flex justify-center items-center">
+        <button type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 ">OK</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="bg-gray-50 pt-20 py-10 px-5  w-full h-full flex flex-col items-center justify-center">
+  <h1 class="font-bold text-blue-950 text-lg md:text-xl lg:text-2xl">Most Popular properties</h1>
+  <div class="gap-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="max-w-full relative min-h-max h-auto flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-current hover:cursor-pointer">
+      <span class="text-sm top-2 left-2 absolute font-semibold text-white px-3 py-1 bg-red-600 bg-opacity-80 rounded-full">Rent</span>
+      <div class="h-auto">
+        <img class="rounded-t-lg" src="assets/images/1.png" alt="property 1" />
+      </div>
+      <div class="px-5 flex flex-col items-start justify-between border-0 border-b-2 pt-3 pb-5">
+        <div class="w-full flex justify-between items-center my-2">
+          <div>
+            <h5 class="text-md font-semibold tracking-tight text-gray-900 dark:text-white">Property Type</h5>
+          </div>
+          <span class="text-md  font-bold text-blue-600">599 DH</span>
+        </div>
+        <p class="text-sm font-medium text-gray-300">Appartement</p>
+      </div>
+      <div class="px-5 py-1 flex items-center justify-between">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-medium text-gray-400 dark:text-white">2 Bed</span>
+            <i class="fa-light fa-bed-front text-gray-900"></i>
+          </div>
+          <div>
+            <span class="text-xs font-medium text-gray-400 dark:text-white">1 Bath</span>
+          </div>
+          <div>
+            <span class="text-xs font-medium text-gray-400 dark:text-white">m²</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
