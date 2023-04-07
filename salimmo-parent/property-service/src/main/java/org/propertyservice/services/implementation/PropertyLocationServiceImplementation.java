@@ -15,6 +15,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
 
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class PropertyLocationServiceImplementation implements PropertyLocationService {
     private final PropertyLocationRepository propertyLocationRepository;
     private final CityService cityService;
@@ -46,8 +48,9 @@ public class PropertyLocationServiceImplementation implements PropertyLocationSe
     @Override
     public PropertyLocationDto add(PropertyLocationDto propertyLocationDto) {
         PropertyLocation propertyLocation = modelMapper.map(propertyLocationDto,PropertyLocation.class);
-        PropertyLocation savedLocation = propertyLocationRepository.save(propertyLocation);
         CityDto cityDto = cityService.findById(propertyLocationDto.getCity().getId());
+        propertyLocation.setCity(modelMapper.map(cityDto,City.class));
+        PropertyLocation savedLocation = propertyLocationRepository.save(propertyLocation);
         if(cityDto != null){
             City city = modelMapper.map(cityDto,City.class);
             city.setPropertyLocations(Set.of(savedLocation));

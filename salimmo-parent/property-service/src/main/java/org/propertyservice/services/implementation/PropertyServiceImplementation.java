@@ -13,6 +13,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.webjars.NotFoundException;
 
@@ -22,10 +23,11 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class PropertyServiceImplementation implements PropertyService {
     private final PropertyValidator propertyValidator;
     private final PropertyRepository propertyRepository;
-   // private final PropertyLocationService
+    private final PropertyLocationService propertyLocationService;
     private final ExteriorPropertyService exteriorPropertyService;
     private final InnerPropertyService innerPropertyService;
     private final PropertyEnergiesService propertyEnergiesService;
@@ -47,7 +49,7 @@ public class PropertyServiceImplementation implements PropertyService {
     }
 
     @Override
-    public PropertyDto add(PropertyDto propertyDto, MultipartFile [] files) {
+    public PropertyDto add(PropertyDto propertyDto) {
         if(Boolean.FALSE.equals(propertyValidator.isValid(propertyDto))){
             throw new IllegalStateException(propertyValidator.getMessage());
         }
@@ -72,22 +74,29 @@ public class PropertyServiceImplementation implements PropertyService {
             PropertyOwnerDto propertyOwnerDto = propertyOwnerService.add(modelMapper.map(property.getOwner(),PropertyOwnerDto.class));
             property.setOwner(modelMapper.map(propertyOwnerDto,PropertyOwner.class));
         }
+        if(property.getPropertyLocation().getId() == null){
+            PropertyLocationDto propertyLocationDto = propertyLocationService.add(modelMapper.map(property.getPropertyLocation(),PropertyLocationDto.class));
+            property.setPropertyLocation(modelMapper.map(propertyLocationDto,PropertyLocation.class));
+        }
         Property savedProperty = propertyRepository.save(property);
         PropertyEnergies propertyEnergies = modelMapper.map(propertyEnergiesService.findById(property.getPropertyEnergies().getId()),PropertyEnergies.class);
         InnerProperty innerProperty = modelMapper.map(innerPropertyService.findById(property.getInnerProperty().getId()),InnerProperty.class);
         ExteriorProperty exteriorProperty = modelMapper.map(exteriorPropertyService.findById(property.getExteriorProperty().getId()),ExteriorProperty.class);
         PropertyOwner owner = modelMapper.map(propertyOwnerService.findById(property.getOwner().getId()),PropertyOwner.class);
         PropertySurface surface = modelMapper.map(propertySurfaceService.findById(property.getPropertySurface().getId()),PropertySurface.class);
+        PropertyLocation location = modelMapper.map(propertyLocationService.findById(property.getPropertyLocation().getId()),PropertyLocation.class);
         propertyEnergies.setProperty(savedProperty);
         innerProperty.setProperty(savedProperty);
         exteriorProperty.setProperty(savedProperty);
         owner.setProperties(Set.of(savedProperty));
         surface.setProperty(savedProperty);
+        location.setProperty(savedProperty);
         propertyEnergiesService.update(propertyEnergies.getId(),modelMapper.map(propertyEnergies, PropertyEnergiesDto.class));
         innerPropertyService.update(innerProperty.getId(),modelMapper.map(innerProperty, InnerPropertyDto.class));
         exteriorPropertyService.update(exteriorProperty.getId(),modelMapper.map(exteriorProperty, ExteriorPropertyDto.class));
         propertyOwnerService.update(owner.getId(),modelMapper.map(owner, PropertyOwnerDto.class));
         propertySurfaceService.update(surface.getId(),modelMapper.map(surface, PropertySurfaceDto.class));
+        propertyLocationService.update(location.getId(),modelMapper.map(location,PropertyLocationDto.class));
         return modelMapper.map(savedProperty, PropertyDto.class);
     }
 

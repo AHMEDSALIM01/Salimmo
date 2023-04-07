@@ -30,10 +30,10 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http.csrf().disable();
-        http.authorizeRequests().antMatchers(HttpMethod.GET,"/swagger-ui/**", API_V_1_PROPERTY,API_V_1_PROPERTY_ID).permitAll();
+        /*http.authorizeRequests().antMatchers(HttpMethod.GET,"/swagger-ui/**", API_V_1_PROPERTY,API_V_1_PROPERTY_ID).permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.POST, API_V_1_PROPERTY).hasAuthority(AGENT_IMMOBOLIER);
         http.authorizeRequests().antMatchers(HttpMethod.DELETE, API_V_1_PROPERTY,API_V_1_PROPERTY_ID).hasAnyAuthority(AGENT_IMMOBOLIER,"ADMIN");
-        http.authorizeRequests().antMatchers(HttpMethod.PUT, API_V_1_PROPERTY).hasAuthority(AGENT_IMMOBOLIER);
-        http.authorizeRequests().anyRequest().authenticated();
+        http.authorizeRequests().antMatchers(HttpMethod.PUT, API_V_1_PROPERTY).hasAuthority(AGENT_IMMOBOLIER);*/
+        http.authorizeRequests().anyRequest().permitAll();
     }
 }

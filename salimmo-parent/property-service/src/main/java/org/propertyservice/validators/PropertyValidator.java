@@ -71,7 +71,7 @@ public class PropertyValidator {
             this.message = "Property status is required";
             return false;
         }
-        if(!propertyDto.getStatus().equals(PropertyStatus.valueOf("RENT")) || !propertyDto.getStatus().equals(PropertyStatus.valueOf("SELL"))){
+        if(!propertyDto.getStatus().equals(PropertyStatus.valueOf("RENT")) && !propertyDto.getStatus().equals(PropertyStatus.valueOf("SELL"))){
             this.message = "Property status invalid";
             return false;
         }
