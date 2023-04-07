@@ -1,5 +1,6 @@
 package org.propertyservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 
 
@@ -10,8 +11,8 @@ import lombok.*;
 @ToString
 public class PropertyLocationDto {
     private Long id;
-    //@JsonIgnoreProperties("propertyLocation")
     private PropertyDto property;
+    @JsonIgnoreProperties("propertyLocation")
     private CityDto city;
     private int houseNumber;
     private String street;

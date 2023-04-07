@@ -6,6 +6,7 @@ import {InnerPropertyDto} from "../innerproperty/innerPropertyDto";
 import {PropertySurfaceDto} from "../propertysurface/propertySurfaceDto";
 import {PropertyEnergiesDto} from "../propertyenergies/propertyEnergiesDto";
 import {ExteriorPropertyDto} from "../exteriorproperty/exteriorPropertyDto";
+import {PropertyStatus} from "../enums/property-status";
 
 export class PropertyDto {
   id!:number;
@@ -23,4 +24,5 @@ export class PropertyDto {
   fees!:number;
   netPrice!:number;
   images!:string[];
+  status!:PropertyStatus;
 }

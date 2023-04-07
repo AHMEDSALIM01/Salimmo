@@ -22,5 +22,4 @@ public class PropertyEnergies extends BaseEntity implements Serializable {
     private Double heatingLoads;
     private Double waterLoads;
     private Double electricLoads;
-
 }
