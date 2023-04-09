@@ -16,4 +16,7 @@ export class PropertyService {
       .set('page', pageNumber).set('size',size);
     return this.http.get<Page<PropertyDto>>(this.host+this.api+"/");
   }
+  public getRecommendedProperties():Observable<Set<PropertyDto>>{
+    return this.http.get<Set<PropertyDto>>(this.host+this.api+"/home");
+  }
 }

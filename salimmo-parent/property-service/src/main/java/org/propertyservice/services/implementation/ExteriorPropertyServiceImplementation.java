@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class ExteriorPropertyServiceImplementation implements ExteriorPropertyService {
     private final ExteriorPropertyRepository exteriorPropertyRepository;
     private final ModelMapper modelMapper;

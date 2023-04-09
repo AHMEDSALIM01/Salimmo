@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-@Transactional
 public class CityServiceImplementation implements CityService {
     private final CityRepository cityRepository;
     private final ModelMapper modelMapper;

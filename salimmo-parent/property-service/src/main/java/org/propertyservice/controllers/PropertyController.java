@@ -32,6 +32,15 @@ public class PropertyController {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
+    @GetMapping("/home")
+    public ResponseEntity<Object> getRecommended(){
+        try{
+            List<PropertyDto> propertyList = propertyService.findRecommended();
+            return ResponseEntity.ok().body(propertyList);
+        }catch (Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
+    }
     @GetMapping("{id}")
     public ResponseEntity<Object> getOneById(@PathVariable Long id){
         try {

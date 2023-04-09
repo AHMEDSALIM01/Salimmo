@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import {PropertyService} from "../../services/property/property.service";
-import {PropertyDto} from "../../models/property/propertyDto";
+import {PropertyDto} from "../../../models/property/propertyDto";
+import {PropertyService} from "../../../services/property/property.service";
 import {catchError, of} from "rxjs";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-agent-properties',
+  templateUrl: './agent-properties.component.html',
+  styleUrls: ['./agent-properties.component.css']
 })
-export class HomeComponent implements OnInit {
+export class AgentPropertiesComponent implements OnInit {
   public properties:PropertyDto[]=[];
   public pageNumber:number=0;
   public hasNext = true;
   public size:number=10;
-  constructor(private propertyService:PropertyService) {
-
-  }
+  constructor(private propertyService:PropertyService) { }
 
   ngOnInit(): void {
     this.propertyService.getAllProperties(this.pageNumber, this.size).pipe(
@@ -30,5 +28,6 @@ export class HomeComponent implements OnInit {
       }
       console.log(this.properties);
     });
+
   }
 }

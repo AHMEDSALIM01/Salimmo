@@ -44,6 +44,7 @@ public class Property extends BaseEntity implements Serializable {
     private Double fees;
     private Double netPrice;
     private Byte [] images;
+    private int vues;
     @Enumerated(EnumType.STRING)
     private PropertyStatus status;
     private String createdBy;

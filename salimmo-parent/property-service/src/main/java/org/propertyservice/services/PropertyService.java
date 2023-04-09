@@ -13,6 +13,9 @@ import java.util.UUID;
 public interface PropertyService{
     PropertyDto findById(Long id);
     Page<PropertyDto> findAll(int page, int size);
+
+    List<PropertyDto> findRecommended();
+
     PropertyDto add(PropertyDto propertyDto);
     PropertyDto update(UUID ref, PropertyDto propertyDto);
     String deleteOneById(Long id);

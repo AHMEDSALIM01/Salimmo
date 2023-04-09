@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class PropertySurfaceServiceImplementation implements PropertySurfaceService {
     private final PropertySurfaceRepository propertySurfaceRepository;
     private final SurfaceValidator surfaceValidator;

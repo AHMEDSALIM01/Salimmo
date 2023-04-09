@@ -14,7 +14,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 import org.webjars.NotFoundException;
 
 import java.util.*;
@@ -37,6 +36,10 @@ public class PropertyServiceImplementation implements PropertyService {
     @Override
     public PropertyDto findById(Long id) {
         Optional<Property> property = propertyRepository.findById(id);
+        if(property.isPresent()){
+            Property incrementVue = property.get();
+            incrementVue.setVues(incrementVue.getVues()+1);
+        }
         return property.map(value -> modelMapper.map(value, PropertyDto.class)).orElseThrow(() -> new NotFoundException("property not found"));
     }
 
@@ -46,6 +49,12 @@ public class PropertyServiceImplementation implements PropertyService {
         Page<Property> properties = propertyRepository.findAll(pageable);
         List<PropertyDto> propertyDtoList = properties.getContent().stream().map(p->modelMapper.map(p, PropertyDto.class)).collect(Collectors.toList());
         return new PageImpl<>(propertyDtoList, properties.getPageable(), properties.getTotalElements());
+    }
+
+    @Override
+    public List<PropertyDto> findRecommended(){
+        List<Property> properties = propertyRepository.findRecommended();
+        return properties.stream().map(p->modelMapper.map(p,PropertyDto.class)).collect(Collectors.toList());
     }
 
     @Override
