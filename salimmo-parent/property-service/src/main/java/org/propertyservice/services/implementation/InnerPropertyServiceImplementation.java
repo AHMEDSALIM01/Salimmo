@@ -23,6 +23,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
+@Transactional
 public class InnerPropertyServiceImplementation implements InnerPropertyService {
     private final InnerPropertyRepository innerPropertyRepository;
     private final ModelMapper modelMapper;

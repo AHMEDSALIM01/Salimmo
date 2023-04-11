@@ -10,6 +10,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -18,6 +19,8 @@ import java.util.UUID;
 @Transactional
 public interface PropertyRepository extends JpaRepository<Property,Long> {
     Page<Property> findAll(Pageable pageable);
+    @Query(value = "SELECT * FROM property WHERE vues > 0 order by vues DESC LIMIT 10",nativeQuery = true)
+    List<Property> findRecommended();
     Optional<Property> findPropertyByRef(UUID ref);
     @Override
     @Modifying

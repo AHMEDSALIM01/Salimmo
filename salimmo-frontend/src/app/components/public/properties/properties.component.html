@@ -1,1 +1,69 @@
-<p>properties works!</p>
+<div class="flex items-stretch">
+  <app-side-bar></app-side-bar>
+  <div class="bg-gray-50 w-full p-3.5 lg:ps-20 flex place-items-start flex-col justify-evenly">
+    <form class="flex shadow-3xl shadow-indigo-950 shadow items-center relative mt-10  p-3 flex-col md:flex-row bg-white  rounded-md">
+      <div class="relative z-0 mb-6 md:me-2 group">
+        <input type="text" name="city" id="city" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900" placeholder=" "/>
+        <label for="city" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">City</label>
+      </div>
+      <div class="relative z-0 mb-6 md:me-2 group">
+        <select name="property_type" id="property_type" class="block ps-2 py-2.5 w-full mt-3 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900">
+          <option>Property type</option>
+          <option>Apartment</option>
+          <option>House</option>
+        </select>
+        <label for="property_type" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Property type</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="text" name="min_price" id="min_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <label for="min_price" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Min Price</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="text" name="max_price" id="max_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <label for="max_price" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Max Price</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-2 group">
+        <input type="number" min="1" max="7" name="Bed" id="nbr_of_rooms" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <label for="nbr_of_rooms" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bed</label>
+      </div>
+      <div class="relative z-0  mb-6 md:me-3 group">
+        <input type="number" min="1" max="7" name="Bed" id="nbr_of_bath" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <label for="nbr_of_bath" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bath</label>
+      </div>
+      <div class="h-full flex justify-center items-center">
+        <button type="button" class="text-white bg-indigo-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 ">OK</button>
+      </div>
+    </form>
+    <div class="pt-5 py-10 grid">
+      <div class="gap-4 py-10 items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" *ngIf="properties.length>0">
+        <div class="max-w-full relative min-h-max h-auto flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-current hover:cursor-pointer" *ngFor="let property of properties">
+          <span class="text-sm top-2 left-2 absolute font-semibold text-white px-3 py-1 bg-red-600 bg-opacity-80 rounded-full">{{property.status}}</span>
+          <div class="h-auto">
+            <img class="rounded-t-lg" src="assets/images/1.png" alt="property 1" />
+          </div>
+          <div class="px-5 h-28 flex flex-col items-start justify-between border-0 border-b-2 pt-1.5 pb-5">
+            <div>
+              <h5 class="text-md font-semibold tracking-tight text-gray-900 dark:text-white">{{property.title}}</h5>
+            </div>
+            <div class="flex items-center w-full justify-between">
+              <p class="text-xs font-medium text-gray-300">Category: {{property.category}}</p>
+              <span class="text-xs  font-bold text-indigo-800">{{property.netPrice}} DH</span>
+            </div>
+          </div>
+          <div class="px-5 py-1 flex items-center justify-between">
+            <div class="flex justify-between items-center">
+              <span class="text-xs font-medium text-gray-400 dark:text-white">{{property.innerProperty.nbrOfRooms}} Bed</span>
+              <i class="fa-light fa-bed-front text-gray-900"></i>
+            </div>
+            <div>
+              <span class="text-xs font-medium text-gray-400 dark:text-white">{{property.innerProperty.nbrOfBathrooms}} Bath</span>
+            </div>
+            <div>
+              <span class="text-xs font-medium text-gray-400 dark:text-white">{{property.propertySurface.livingArea}} m²</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

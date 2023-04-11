@@ -5,32 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/enums/property-status.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/page/page.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/page/page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/property/propertyDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/property/propertyDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorPropertyDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorPropertyDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyowner/propertyOwnerDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyowner/propertyOwnerDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertysurface/propertySurfaceDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertysurface/propertySurfaceDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyLocationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/dto/PropertyLocationDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyEnergiesServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyEnergiesServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyLocationServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyLocationServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/validators/PropertyValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/validators/PropertyValidator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +118,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "dart.analysis.tool.window.visible": "false",
     "jdk.selected.JAVA_MODULE": "corretto-11 (2)",
-    "last_opened_file_path": "C:/Users/Youcode/IdeaProjects/Salimmo/salimmo-frontend",
+    "last_opened_file_path": "C:/Users/Youcode/IdeaProjects/flrg-tmp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -190,7 +191,8 @@
       <workItem from="1679650099293" duration="103000" />
       <workItem from="1679650295528" duration="14028000" />
       <workItem from="1679780292342" duration="17630000" />
-      <workItem from="1680788706882" duration="13674000" />
+      <workItem from="1680788706882" duration="25037000" />
+      <workItem from="1680903310586" duration="10307000" />
     </task>
     <task id="LOCAL-00001" summary="Preparation de l'environnement de travail">
       <created>1678647361780</created>
@@ -419,12 +421,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java</url>
-          <line>44</line>
+          <line>43</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java</url>
-          <line>43</line>
+          <line>42</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -442,17 +444,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>44</line>
+          <line>47</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>45</line>
+          <line>48</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>46</line>
+          <line>49</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
@@ -460,7 +462,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>47</line>
+          <line>50</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -480,68 +482,93 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>87</line>
+          <line>96</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>88</line>
+          <line>97</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>89</line>
+          <line>98</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>90</line>
+          <line>99</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>91</line>
+          <line>100</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>93</line>
+          <line>102</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>94</line>
+          <line>103</line>
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>95</line>
+          <line>104</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>96</line>
+          <line>105</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>97</line>
+          <line>106</line>
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>99</line>
+          <line>108</line>
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
-          <line>98</line>
+          <line>107</line>
           <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

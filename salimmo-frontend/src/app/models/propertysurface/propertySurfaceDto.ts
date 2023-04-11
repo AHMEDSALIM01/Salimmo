@@ -7,4 +7,11 @@ export class PropertySurfaceDto {
   groundSurface!:number;
   usefulSurface!:number;
   roofSpace!:number;
+  squareArea!:number;
+  gardenArea!:number;
+  terraceArea!:number;
+  balconyArea!:number;
+  weightedArea!:number;
+  ancillaryArea!:number;
+  buildingArea!:number;
 }

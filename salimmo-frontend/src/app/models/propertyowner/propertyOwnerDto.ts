@@ -6,4 +6,5 @@ properties!:Set<PropertyDto>;
 firstName!:string;
 lastName!:string;
 phone!:string;
+email!:string;
 }

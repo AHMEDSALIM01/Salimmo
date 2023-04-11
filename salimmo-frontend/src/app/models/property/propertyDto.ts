@@ -25,4 +25,5 @@ export class PropertyDto {
   netPrice!:number;
   images!:string[];
   status!:PropertyStatus;
+  createdAt!:Date;
 }
