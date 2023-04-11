@@ -1,5 +1,10 @@
+<div class="flex items-center w-full space-x-1 px-3 mb-1.5">
+  <fa-icon [icon]="home" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+  <div class="inline-flex" *ngFor="let route of currentRoute;let index = index">
+    <span (click)="navigate(index==0 ? currentRoute[0] : currentRoute[0]+'/'+currentRoute[index])" class="font-medium text-sm text-indigo-700 cursor-pointer"> > {{route}}</span>
+  </div>
+</div>
 <div class="flex justify-center items-center w-full px-3 mb-5">
-
   <form class="w-full p-5 bg-white rounded-2xl shadow shadow-indigo-900 shadow-md shadow-current">
     <div class="relative z-0 w-full mb-6 group">
       <input type="file" name="images" id="images" class="block hidden py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  multiple/>
