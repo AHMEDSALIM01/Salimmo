@@ -6,7 +6,7 @@ export class ExteriorPropertyDto {
   sewer!:boolean;
   condition!:string;
   existingGarage!:boolean;
-  numberOfGarage!:number;
+  nbrOfGarage!:number;
   fence!:string;
   terrace!:boolean;
   piscine!:boolean;

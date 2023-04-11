@@ -27,7 +27,7 @@ public class PropertyController {
     public ResponseEntity<Object> getAll(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10") int size){
         try{
             Page<PropertyDto> propertyList = propertyService.findAll(page,size);
-            return ResponseEntity.ok().body(propertyList);
+            return ResponseEntity.status(HttpStatus.OK).body(propertyList);
         }catch (Exception e){
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
@@ -85,8 +85,8 @@ public class PropertyController {
     @DeleteMapping("{id}")
     public ResponseEntity<Object> deleteOne(@PathVariable Long id){
         try {
-            String propertyResponse = propertyService.deleteOneById(id);
-            return ResponseEntity.accepted().body(propertyResponse);
+            PropertyDto propertyResponse = propertyService.deleteOneById(id);
+            return ResponseEntity.ok().body(propertyResponse);
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
@@ -95,7 +95,7 @@ public class PropertyController {
     public ResponseEntity<Object> deleteOMultiple(@RequestBody List<Long> ids){
         try {
             Map<String,String> propertyResponseList = propertyService.deleteMultipleById(ids);
-            return ResponseEntity.ok().body(propertyResponseList);
+            return ResponseEntity.status(HttpStatus.OK).body(propertyResponseList);
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }

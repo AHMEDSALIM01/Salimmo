@@ -5,6 +5,10 @@ import {HomeComponent} from "./components/public/home/home.component";
 import {ClientComponent} from "./components/public/client/client.component";
 import {DashboardComponent} from "./components/agent/dashboard/dashboard.component";
 import {AgentPropertiesComponent} from "./components/agent/agent-properties/agent-properties.component";
+import {AddPropertyComponent} from "./components/agent/agent-properties/add-property/add-property.component";
+import {
+  AgentListPropertiesComponent
+} from "./components/agent/agent-properties/agent-list-properties/agent-list-properties.component";
 
 const routes: Routes = [
   {
@@ -26,8 +30,21 @@ const routes: Routes = [
     component : DashboardComponent,
     children : [
       {
-        path: "",
-        component: AgentPropertiesComponent
+        path: "", redirectTo :"properties",pathMatch:"full"
+      },
+      {
+         path: "properties",
+         component: AgentPropertiesComponent,
+         children : [
+           {
+             path :"",
+             component: AgentListPropertiesComponent
+           },
+           {
+             path :"add",
+             component : AddPropertyComponent
+           }
+         ]
       }
     ],
   }

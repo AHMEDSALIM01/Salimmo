@@ -5,65 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/dashboard/dashboard.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/dashboard/dashboard.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/dashboard/dashboard.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/dashboard/dashboard.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/client/client.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/client/client.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/client/client.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/client/client.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/home/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/home/home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/filter/filter.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/filter/filter.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/filter/filter.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/filter/filter.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/home/home.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/navbar/navbar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/navbar/navbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/property/propertyDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/property/propertyDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorPropertyDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/exteriorproperty/exteriorPropertyDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyowner/propertyOwnerDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertyowner/propertyOwnerDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertysurface/propertySurfaceDto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/propertysurface/propertySurfaceDto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/city/city.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint-state.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/entities/Property.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/ExteriorPropertyServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/InnerPropertyServiceImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertySurfaceServiceImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,37 +102,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11 (2)&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Youcode/IdeaProjects/Salimmo/salimmo-frontend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;085d021ff49b6f7d2f26f82fd9482604&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "dart.analysis.tool.window.visible": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-11 (2)",
+    "last_opened_file_path": "C:/Users/Youcode/IdeaProjects/flrg-tmp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false",
+    "spring.configuration.checksum": "085d021ff49b6f7d2f26f82fd9482604",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -224,7 +192,7 @@
       <workItem from="1679650295528" duration="14028000" />
       <workItem from="1679780292342" duration="17630000" />
       <workItem from="1680788706882" duration="25037000" />
-      <workItem from="1680903310586" duration="1969000" />
+      <workItem from="1680903310586" duration="10307000" />
     </task>
     <task id="LOCAL-00001" summary="Preparation de l'environnement de travail">
       <created>1678647361780</created>
@@ -586,6 +554,21 @@
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyOwnerServiceImplementation.java</url>
           <line>50</line>
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="61" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

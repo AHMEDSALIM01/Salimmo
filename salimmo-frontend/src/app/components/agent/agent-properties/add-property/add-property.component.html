@@ -1,0 +1,585 @@
+<div class="flex justify-center items-center w-full px-3 mb-5">
+
+  <form class="w-full p-5 bg-white rounded-2xl shadow shadow-indigo-900 shadow-md shadow-current">
+    <div class="relative z-0 w-full mb-6 group">
+      <input type="file" name="images" id="images" class="block hidden py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  multiple/>
+      <label for="images">
+        <div class="flex text-xl text-indigo-900 font-semibold py-4 space-x-3 items-center justify-center border-2 border-dashed border-current rounded-md hover:shadow-current hover:shadow-md hover:shadow hover:shadow-indigo-600 hover:text-indigo-600">
+          <span>Upload Images</span>
+          <fa-icon [icon]="upload" class="text-lg"></fa-icon>
+        </div>
+      </label>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+        <input type="text" name="title" id="title" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  />
+        <label for="title" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <select type="text" name="type" id="type" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <option value="">Type</option>
+        </select>
+        <label for="type" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Type</label>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="flex space-x-3 items-center">
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="net_price" id="net_price" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "/>
+            <label for="net_price" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Net Price (DH)</label>
+          </div>
+        </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <input type="text" name="fees" id="fees" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "/>
+        <label for="fees" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fees (DH)</label>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="relative z-0 w-full mb-6 group">
+        <select  name="status" id="status" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <option value="">Status</option>
+        </select>
+        <label for="status" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Status</label>
+      </div>
+      <div class="relative z-0 w-full mb-6 group">
+        <select  name="category" id="category" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <option value="">Category</option>
+        </select>
+        <label for="category" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Category</label>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6 items-start">
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addOwner" class="relative z-0 w-full mb-6 group">
+          <select  name="owner_id" id="owner_id" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Owner</option>
+          </select>
+          <label for="owner_id" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Owner</label>
+        </div>
+        <div *ngIf="addOwner" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Owner</div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="owner.firstName"  name="firstname" id="firstname" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="firstname" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First Name</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="owner.lastName"  name="lastname" id="lastname" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="lastname" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last Name</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="owner.email"  name="email" id="email" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="email" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="owner.phone"   name="lastname" id="phone" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="phone" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone</label>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addOwner" (click)="addOwner = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addOwner"  (click)="confirmOwner()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addOwner" (click)="addOwner = false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addInnerProperty" class="relative z-0 w-full mb-6 group">
+          <select  name="inner_property" id="inner_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Interior Property</option>
+          </select>
+          <label for="inner_property" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Interior Property</label>
+        </div>
+        <div *ngIf="addInnerProperty" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Inner Property</div>
+          <div class="grid md:grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select  [(ngModel)]="interiorProperty.nbrOfLevels" name="nbrOfLevels" id="nbrOfLevels" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="" selected>Levels</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4">+4</option>
+                <option value="5">+5</option>
+                <option value="6">+6</option>
+              </select>
+              <label for="nbrOfLevels" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Levels</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfPieces"  name="nbrOfPieces" id="nbrOfPieces" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Pieces</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfPieces" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Pieces</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfRooms"  name="nbrOfRooms" id="nbrOfRooms" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Rooms</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfPieces" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Rooms</label>
+            </div>
+          </div>
+          <div class="grid md:3 grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfRoomsGroundFloor"  name="nbrOfRoomsGroundFloor" id="nbrOfRoomsGroundFloor" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">GF Rooms</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfRoomsGroundFloor" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">GF Rooms</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfParentalRooms"  name="nbrOfParentalRooms" id="nbrOfParentalRooms" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Parental Rooms</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfParentalRooms" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Parental Rooms</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfShowerRooms"  name="nbrOfParentalRooms" id="nbrOfShowerRooms" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Showers</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfShowerRooms" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Showers</label>
+            </div>
+          </div>
+          <div class="grid md:3 grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfShowerRoomsGroundFloor"  name="nbrOfRoomsGroundFloor" id="nbrOfShowerRoomsGroundFloor" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">GF Shower</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfShowerRoomsGroundFloor" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">GF Showers</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfBathrooms"  name="nbrOfBathrooms" id="nbrOfBathrooms" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Bath</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfBathrooms" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Bath</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfBathroomsGroundFloor"  name="nbrOfParentalRooms" id="nbrOfBathroomsGroundFloor" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">GF Bath</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfBathroomsGroundFloor" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">GF Bath</label>
+            </div>
+          </div>
+          <div class="grid md:3 grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfToilets"  name="nbrOfToilets" id="nbrOfToilets" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Toilets</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfToilets" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Toilets</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfToiletsGroundFloor"  name="nbrOfToiletsGroundFloor" id="nbrOfToiletsGroundFloor" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">GF Toilets</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfToiletsGroundFloor" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">GF Toilets</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type= "text" [(ngModel)]="interiorProperty.kitchenType"  name="kitchenType" id="kitchenType" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"/>
+              <label for="kitchenType" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Kitchen Type</label>
+            </div>
+          </div>
+          <div class="grid md:3 grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Basement</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingBasement" id="existingBasement" type="radio" value="true" name="existingBasement" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingBasement" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingBasement" id="existingBasement1" type="radio" value="false" name="existingBasement" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingBasement1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Wash Room</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingWashRoom" id="existingWashRoom" type="radio" value="true" name="existingWashRoom" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingWashRoom" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingWashRoom" id="existingWashRoom1" type="radio" value="false" name="existingWashRoom" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingWashRoom1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Cave</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingCave" id="existingCave" type="radio" value="true" name="existingCave" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingCave" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingCave" id="existingCave1" type="radio" value="false" name="existingCave" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingCave1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid md:3 grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="interiorProperty.nbrOfCaves"  name="nbrOfCaves" id="nbrOfCaves" class="block py-1.5 px-1.5 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Nbr of Caves</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="6">+4</option>
+                <option value="7">+5</option>
+                <option value="8">+6</option>
+              </select>
+              <label for="nbrOfCaves" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Number Of Caves </label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Cellar</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingCellar" id="existingCellar" type="radio" value="true" name="existingCellar" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingCellar" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="interiorProperty.existingCellar" id="existingCellar1" type="radio" value="false" name="existingCellar" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingCellar1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addInnerProperty" (click)="addInnerProperty = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addInnerProperty"  (click)="confirmInnerProperty()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addInnerProperty" (click)="addInnerProperty=false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6 items-start">
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addPropertyLocation" class="relative z-0 w-full mb-6 group">
+          <select name="property_location" id="property_Location" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Location</option>
+          </select>
+          <label for="property_Location" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Location</label>
+        </div>
+        <div *ngIf="addPropertyLocation" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Property Location</div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="location.city.id" name="city" id="city" class="block py-1.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">City</option>
+              </select>
+              <label for="city" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="0" max="500" [(ngModel)]="location.houseNumber"  name="houseNumber" id="houseNumber" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="houseNumber" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">House Number</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="location.street"  name="street" id="street" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="street" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Street</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="location.latitude"   name="latitude" id="latitude" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="latitude" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Latitude</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-1 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="location.longitude"   name="longitude" id="longitude" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="longitude" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Longitude</label>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addPropertyLocation" (click)="addPropertyLocation = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addPropertyLocation" (click)="confirmLocation()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addPropertyLocation" (click)="addPropertyLocation = false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addExteriorProperty" class="relative z-0 w-full mb-6 group">
+          <select  name="exterior" id="exterior_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Exterior Property</option>
+          </select>
+          <label for="inner_property" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Exterior Property</label>
+        </div>
+        <div *ngIf="addExteriorProperty" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Exterior Property</div>
+          <div class="grid md:grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "datetime-local" [(ngModel)]="exteriorProperty.yearConstruction"  name="yearConstruction" id="yearConstruction" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="yearConstruction" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Construction Year</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="exteriorProperty.windows"  name="windows" id="windows" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="windows" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Windows</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="exteriorProperty.shutter"  name="shutter" id="shutter" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="shutter" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Shutter</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="exteriorProperty.roof"  name="roof" id="roof" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="roof" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Roof</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Sewer</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.sewer" id="sewer" type="radio" value="true" name="sewer" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="sewer" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.sewer" id="sewer1" type="radio" value="false" name="sewer" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="sewer1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="exteriorProperty.condition"   name="condition" id="condition" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="condition" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Condition</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-3 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Garage</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.existingGarage" id="existingGarage" type="radio" value="true" name="existingGarage" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingGarage" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.existingGarage" id="existingGarage1" type="radio" value="false" name="existingGarage" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="existingGarage1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min ="0" max="10" [(ngModel)]="exteriorProperty.nbrOfGarage"   name="nbrOfGarage" id="nbrOfGarage" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="nbrOfGarage" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Garages</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="exteriorProperty.fence"   name="fence" id="fence" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="fence" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Fence</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Pool</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.piscine" id="piscine" type="radio" value="true" name="piscine" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="piscine" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.piscine" id="piscine1" type="radio" value="false" name="piscine" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="piscine1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+            <div class="relative z-0 w-full mb-6 group flex flex-col space-y-2 items-start">
+              <div  class="absolute text-sm text-gray-500 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] ">Terrace</div>
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.terrace" id="terrace" type="radio" value="true" name="terrace" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="terrace" class="text-sm text-gray-500 scale-90">true</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <input [(ngModel)]="exteriorProperty.terrace" id="terrace1" type="radio" value="false" name="terrace" class="w-3 h-3 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500  focus:ring-2 ">
+                  <label for="terrace1" class="text-sm text-gray-500 scale-90">false</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addExteriorProperty" (click)="addExteriorProperty = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addExteriorProperty"  (click)="confirmExteriorProperty()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addExteriorProperty" (click)="addExteriorProperty = false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6 items-start">
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addSurface" class="relative z-0 w-full mb-6 group">
+          <select name="property_surface" id="property_surface" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Surface</option>
+          </select>
+          <label for="property_surface" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Location</label>
+        </div>
+        <div *ngIf="addSurface" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Owner</div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.livingArea"  name="livingArea" id="livingArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="livingArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-65 peer-focus:-translate-y-6">Living Area (m2)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.groundSurface"  name="groundSurface" id="groundSurface" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="groundSurface" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ground Surface (m2)</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.usefulSurface"  name="usefulSurface" id="usefulSurface" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="usefulSurface" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Useful Surface (m2)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.roofSpace"  name="roofSpace" id="roofSpace" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="roofSpace" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Roof Area (m2)</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.squareArea"  name="squareArea" id="squareArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="squareArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Square Area (m2)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.gardenArea"  name="gardenArea" id="gardenArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="gardenArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Garden Area (m2)</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.terraceArea"  name="terraceArea" id="terraceArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="terraceArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Terrace Area (m2)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.balconyArea"  name="balconyArea" id="balconyArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="balconyArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Balcony Area (m2)</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.weightedArea"  name="weightedArea" id="weightedArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="weightedArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Weighted Area (m2)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.ancillaryArea"  name="ancillaryArea" id="ancillaryArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="ancillaryArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Ancillary Area (m2)</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-1 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="10" [(ngModel)]="surface.buildingArea"  name="buildingArea" id="buildingArea" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="buildingArea" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Building Area (m2)</label>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addSurface" (click)="addSurface = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addSurface"  (click)="confirmPropertySurface()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addSurface" (click)="addSurface = false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+      <div class="flex space-x-3 items-center">
+        <div *ngIf="!addEnergy" class="relative z-0 w-full mb-6 group">
+          <select name="property_energies" id="property_energies" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="">Property Energies</option>
+          </select>
+          <label for="property_energies" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Energies</label>
+        </div>
+        <div *ngIf="addEnergy" class="relative z-0 w-full mb-6 p-3 pt-1 group shadow-indigo-900 shadow-current shadow rounded-md ">
+          <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Property Energies</div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="propertyEnergies.hotWater"  name="hotWater" id="hotWater" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="hotWater" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-65 peer-focus:-translate-y-6">Hot Water</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "text" [(ngModel)]="propertyEnergies.electricalInstallation"  name="electricalInstallation" id="electricalInstallation" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="electricalInstallation" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Electrical Installation</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="0" [(ngModel)]="propertyEnergies.heatingLoads"  name="heatingLoads" id="heatingLoads" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="heatingLoads" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-65 peer-focus:-translate-y-6">Heating Loads (DH)</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="0" [(ngModel)]="propertyEnergies.waterLoads"  name="waterLoads" id="waterLoads" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="waterLoads" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Water Loads</label>
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 md:gap-6 mt-3">
+            <div class="relative z-0 w-full mb-6 group">
+              <input type = "number" min="0" [(ngModel)]="propertyEnergies.electricLoads"  name="electricLoads" id="electricLoads" class="block py-1.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <label for="electricLoads" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-65 peer-focus:-translate-y-6">Electric Loads</label>
+            </div>
+            <div class="relative z-0 w-full mb-6 group">
+              <select [(ngModel)]="propertyEnergies.heatingType" name="exterior" id="heatingType" class="block py-1.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+                <option value="">Heating Type</option>
+              </select>
+              <label for="heatingType" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Heating Type</label>
+            </div>
+          </div>
+        </div>
+        <fa-icon *ngIf="!addEnergy" (click)="addEnergy = true" [icon]="add" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addEnergy"  (click)="confirmEnergy()" [icon]="valid" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
+        <fa-icon *ngIf="addEnergy" (click)="addEnergy = false" [icon]="close" class="text-lg text-red-900 font-bold hover:text-red-600 cursor-pointer"></fa-icon>
+      </div>
+      <div class="flex space-x-3 items-center mt-0">
+        <div class="relative z-0 w-full mb-6 group">
+          <textarea style="resize: none" cols="50" rows="5" name="description" id="description" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "></textarea>
+          <label for="description" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+  </form>
+</div>

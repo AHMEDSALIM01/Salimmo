@@ -35,10 +35,6 @@ z
 Jproperty-service/src/main/java/org/propertyservice/enums/PropertyType.java,8\f\8f4e78d835f472c735b257ed29b0ba9caf874de1
 |
 Lproperty-service/src/main/java/org/propertyservice/enums/PropertyStatus.java,a\c\ac4e3d3bd7ed0b0a0b9bfb8f3aa6ea89b0b0e0ff
-y
-Iproperty-service/src/main/java/org/propertyservice/enums/HeatingType.java,5\d\5dfe204bd6311fc836c80a424c4c1e1cba11bd1e
-Å
-Qproperty-service/src/main/java/org/propertyservice/entities/PropertyEnergies.java,3\3\33b593a9589be1efddcfe28910ce15903146311c
 
 Oproperty-service/src/main/java/org/propertyservice/security/SecurityConfig.java,9\2\92377d52ee0750c72ba8205b1ff84d88250bdee8
 é
@@ -79,8 +75,6 @@ s
 Cproperty-service/src/main/java/org/propertyservice/dto/CityDto.java,8\b\8b8035b1ee837695b6637f7e2abb30bcb43cc81f
 
 Oproperty-service/src/main/java/org/propertyservice/dto/ExteriorPropertyDto.java,2\5\251efe101d8701a10be139bc4905c6b8e5dc2ebb
-y
-Iproperty-service/src/main/java/org/propertyservice/entities/Property.java,f\9\f99f363adaa3afb93788b9cf733bdda9b7174f18
 ô
 iproperty-service/src/main/java/org/propertyservice/services/implementation/CityServiceImplementation.java,8\b\8b059c04430aa8f468b0adcd5cb6369ad4addabb
 •

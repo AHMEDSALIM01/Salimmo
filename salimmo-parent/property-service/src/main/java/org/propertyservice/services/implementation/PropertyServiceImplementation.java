@@ -119,12 +119,13 @@ public class PropertyServiceImplementation implements PropertyService {
     }
 
     @Override
-    public String deleteOneById(Long id) {
-        if(propertyRepository.findById(id).isEmpty()){
+    public PropertyDto deleteOneById(Long id) {
+        Optional<Property> optionalProperty = propertyRepository.findById(id);
+        if(optionalProperty.isEmpty()){
             throw new NotFoundException("Property with Id : "+id+" Not Found");
         }
         propertyRepository.deleteById(id);
-        return "Property deleted successfully";
+        return modelMapper.map(optionalProperty,PropertyDto.class);
     }
 
     @Override
