@@ -10,9 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/innerproperties")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class InnerPropertyController {
 
     private final InnerPropertyService innerPropertyService;
@@ -27,6 +30,11 @@ public class InnerPropertyController {
     public ResponseEntity<Page<InnerPropertyDto>> findAll(@RequestParam(defaultValue = "0") int page,
                                                           @RequestParam(defaultValue = "20") int size) {
         Page<InnerPropertyDto> innerPropertyResponseDtoPage = innerPropertyService.findAll(page, size);
+        return new ResponseEntity<>(innerPropertyResponseDtoPage, HttpStatus.OK);
+    }
+    @GetMapping("/all")
+    public ResponseEntity<List<InnerPropertyDto>> findAll() {
+        List<InnerPropertyDto> innerPropertyResponseDtoPage = innerPropertyService.findAll();
         return new ResponseEntity<>(innerPropertyResponseDtoPage, HttpStatus.OK);
     }
 

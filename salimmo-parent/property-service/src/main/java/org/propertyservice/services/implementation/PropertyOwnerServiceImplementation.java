@@ -40,6 +40,11 @@ public class PropertyOwnerServiceImplementation implements PropertyOwnerService 
         List<PropertyOwnerDto> propertyResponseDtoList = owners.getContent().stream().map(p->modelMapper.map(p, PropertyOwnerDto.class)).collect(Collectors.toList());
         return new PageImpl<>(propertyResponseDtoList, owners.getPageable(), owners.getTotalElements());
     }
+    @Override
+    public List<PropertyOwnerDto> findAll() {
+        List<PropertyOwner> owners = propertyOwnerRepository.findAll();
+        return owners.stream().map(p->modelMapper.map(p, PropertyOwnerDto.class)).collect(Collectors.toList());
+    }
 
     @Override
     public PropertyOwnerDto add(PropertyOwnerDto propertyOwnerRequestDto) {

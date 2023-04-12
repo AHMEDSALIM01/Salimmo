@@ -11,7 +11,6 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.webjars.NotFoundException;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,6 +49,11 @@ public class CityServiceImplementation implements CityService {
         Page<City> cities = cityRepository.findAll(pageable);
         List<CityDto> cityDtoList  = cities.getContent().stream().map(c->modelMapper.map(c,CityDto.class)).collect(Collectors.toList());
         return new PageImpl<>(cityDtoList,cities.getPageable(),cities.getTotalElements());
+    }
+    @Override
+    public List<CityDto> findAll() {
+        List<City> cities = cityRepository.findAll();
+        return cities.stream().map(c->modelMapper.map(c,CityDto.class)).collect(Collectors.toList());
     }
 
 }

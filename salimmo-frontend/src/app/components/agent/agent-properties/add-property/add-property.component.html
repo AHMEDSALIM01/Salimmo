@@ -1,3 +1,11 @@
+<div *ngIf="success.length>0" class="p-4 mb-4 flex items-center justify-between text-sm text-green-800 rounded-lg bg-green-200 dark:bg-gray-800 dark:text-green-400" role="alert">
+  <span  class="font-medium">{{success}}</span>
+  <fa-icon (click)="closeSuccess()" [icon]="close" class="text-md text-red-600 cursor-pointer"></fa-icon>
+</div>
+<div *ngIf="error.length>0" class="p-4 mb-4 flex items-center justify-between text-sm text-red-800 rounded-lg bg-red-200 dark:bg-gray-800 dark:text-red-400" role="alert">
+  <span  class="font-medium">{{error}}</span>
+  <fa-icon (click)="error=''" [icon]="close" class="text-md text-red-600 cursor-pointer"></fa-icon>
+</div>
 <div class="flex items-center w-full space-x-1 px-3 mb-1.5">
   <fa-icon [icon]="home" class="text-lg text-indigo-900 font-bold hover:text-indigo-600 cursor-pointer"></fa-icon>
   <div class="inline-flex" *ngFor="let route of currentRoute;let index = index">
@@ -9,7 +17,7 @@
     <div class="relative z-0 w-full mb-6 group">
       <input type="file" name="images" id="images" class="block hidden py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" "  multiple/>
       <label for="images">
-        <div class="flex text-xl text-indigo-900 font-semibold py-4 space-x-3 items-center justify-center border-2 border-dashed border-current rounded-md hover:shadow-current hover:shadow-md hover:shadow hover:shadow-indigo-600 hover:text-indigo-600">
+        <div class="cursor-pointer flex text-xl text-indigo-900 font-semibold py-4 space-x-3 items-center justify-center border-2 border-dashed border-current rounded-md hover:shadow-current hover:shadow-md hover:shadow hover:shadow-indigo-950 hover:text-indigo-950">
           <span>Upload Images</span>
           <fa-icon [icon]="upload" class="text-lg"></fa-icon>
         </div>
@@ -21,8 +29,21 @@
         <label for="title" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Title</label>
       </div>
       <div class="relative z-0 w-full mb-6 group">
-        <select type="text" name="type" id="type" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+        <select [(ngModel)]="property.type" name="type" id="type" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
           <option value="">Type</option>
+          <option value="APARTMENT">APARTMENT</option>
+          <option value="DUPLEX">Duplex</option>
+          <option value="VILLA">Villa</option>
+            <option value="HOUSE">House</option>
+          <option value="BUILDING">Building</option>
+          <option value="GROUND">Type</option>
+          <option value="BUNGALOW">Bungalow</option>
+          <option value="COTTAGE">Cottage</option>
+          <option value="FACTORY">Factory</option>
+          <option value="RIAD">Riad</option>
+          <option value="TRIPLEX">Triplex</option>
+          <option value="STUDIO">Studio</option>
+          <option value="HANGAR">Hangar</option>
         </select>
         <label for="type" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Type</label>
       </div>
@@ -41,14 +62,20 @@
     </div>
     <div class="grid md:grid-cols-2 md:gap-6">
       <div class="relative z-0 w-full mb-6 group">
-        <select  name="status" id="status" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-          <option value="">Status</option>
+        <select [(ngModel)]="property.status" name="status" id="status" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <option value="" selected>Status</option>
+          <option value="RENT">Rent</option>
+          <option value="SELL">Sell</option>
         </select>
         <label for="status" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Status</label>
       </div>
       <div class="relative z-0 w-full mb-6 group">
-        <select  name="category" id="category" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-          <option value="">Category</option>
+        <select [(ngModel)]="property.category" name="category" id="category" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <option value="" selected>Category</option>
+          <option value="RESIDENTIAL">Residential</option>
+          <option value="COMMERCIAL">Commercial</option>
+          <option value="INDUSTRIAL">Industrial</option>
+          <option value="GROUNDS">Grounds</option>
         </select>
         <label for="category" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Category</label>
       </div>
@@ -56,8 +83,9 @@
     <div class="grid md:grid-cols-2 md:gap-6 items-start">
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addOwner" class="relative z-0 w-full mb-6 group">
-          <select  name="owner_id" id="owner_id" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-            <option value="">Owner</option>
+          <select [(ngModel)]="property.owner" name="owner_id" id="owner_id" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="" selected>Owner</option>
+            <option  *ngFor="let owner of propertyOwnerList" value="{{owner}}">{{owner.firstName}} {{owner.lastName}}</option>
           </select>
           <label for="owner_id" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Owner</label>
         </div>
@@ -90,8 +118,9 @@
       </div>
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addInnerProperty" class="relative z-0 w-full mb-6 group">
-          <select  name="inner_property" id="inner_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-            <option value="">Interior Property</option>
+          <select [(ngModel)]="property.innerProperty" name="inner_property" id="inner_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="" selected>Interior Property</option>
+            <option *ngFor="let innerProperty of innerPropertyList" value="{{innerProperty}}">Interior Property with id : {{innerProperty.id}}</option>
           </select>
           <label for="inner_property" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Interior Property</label>
         </div>
@@ -318,8 +347,9 @@
     <div class="grid md:grid-cols-2 md:gap-6 items-start">
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addPropertyLocation" class="relative z-0 w-full mb-6 group">
-          <select name="property_location" id="property_Location" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-            <option value="">Location</option>
+          <select [(ngModel)]="location" name="property_location" id="property_Location" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="" selected>Location</option>
+            <option *ngFor="let location of propertyLocationList" value="{{location}}">N° {{location.houseNumber}} {{location.street}}</option>
           </select>
           <label for="property_Location" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Location</label>
         </div>
@@ -327,8 +357,9 @@
           <div class="text-sm text-gray-400 w-full text-center border-0 border-b-2 border-gray-100">Property Location</div>
           <div class="grid md:grid-cols-2 md:gap-6 mt-3">
             <div class="relative z-0 w-full mb-6 group">
-              <select [(ngModel)]="location.city.id" name="city" id="city" class="block py-1.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+              <select [(ngModel)]="location.city" name="city" id="city" class="block py-1.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
                 <option value="">City</option>
+                <option *ngFor="let city of cityList" value="city" >{{city.name}}</option>
               </select>
               <label for="city" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">City</label>
             </div>
@@ -360,8 +391,9 @@
       </div>
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addExteriorProperty" class="relative z-0 w-full mb-6 group">
-          <select  name="exterior" id="exterior_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-            <option value="">Exterior Property</option>
+          <select [(ngModel)]="property.exteriorProperty" name="exterior" id="exterior_property" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+            <option value="" selected>Exterior Property</option>
+            <option *ngFor="let exteriorProperty of exteriorPropertyList" value="{{exteriorProperty}}">Exterior Property with id : {{exteriorProperty.id}}</option>
           </select>
           <label for="inner_property" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Exterior Property</label>
         </div>
@@ -464,8 +496,9 @@
     <div class="grid md:grid-cols-2 md:gap-6 items-start">
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addSurface" class="relative z-0 w-full mb-6 group">
-          <select name="property_surface" id="property_surface" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <select [(ngModel)]="property.propertySurface" name="property_surface" id="property_surface" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
             <option value="">Surface</option>
+            <option *ngFor="let surface of propertySurfaceList" value="{{surface}}">Surface with id : {{surface.id}}</option>
           </select>
           <label for="property_surface" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Location</label>
         </div>
@@ -534,8 +567,9 @@
       </div>
       <div class="flex space-x-3 items-center">
         <div *ngIf="!addEnergy" class="relative z-0 w-full mb-6 group">
-          <select name="property_energies" id="property_energies" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
+          <select [(ngModel)]="property.propertyEnergies" name="property_energies" id="property_energies" class="block py-2.5 px-2 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
             <option value="">Property Energies</option>
+            <option *ngFor="let energy of propertyEnergiesList" value="{{energy}}">Property Energy with id : {{energy.id}}</option>
           </select>
           <label for="property_energies" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Energies</label>
         </div>
@@ -585,6 +619,6 @@
         </div>
       </div>
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <button (click)="onSubmit()" type="button" class="text-white bg-indigo-900 hover:bg-indigo-950 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Submit</button>
   </form>
 </div>

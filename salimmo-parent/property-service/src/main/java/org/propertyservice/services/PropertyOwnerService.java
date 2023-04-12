@@ -11,6 +11,9 @@ import java.util.Map;
 public interface PropertyOwnerService{
     PropertyOwnerDto findById(Long id);
     Page<PropertyOwnerDto> findAll(int page, int size);
+
+    List<PropertyOwnerDto> findAll();
+
     PropertyOwnerDto add(PropertyOwnerDto propertyDto);
     PropertyOwnerDto update(Long id, PropertyOwnerDto propertyDto);
     String deleteOneById(Long id);

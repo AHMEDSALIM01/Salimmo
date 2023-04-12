@@ -10,7 +10,14 @@ import {PropertyLocationDto} from "../../../../models/propertylocation/propertyL
 import {ExteriorPropertyDto} from "../../../../models/exteriorproperty/exteriorPropertyDto";
 import {PropertySurfaceDto} from "../../../../models/propertysurface/propertySurfaceDto";
 import {PropertyEnergiesDto} from "../../../../models/propertyenergies/propertyEnergiesDto";
-import * as url from "url";
+import {CityService} from "../../../../services/city/city.service";
+import {ExteriorpropertyService} from "../../../../services/exteriorproperty/exteriorproperty.service";
+import {CityDto} from "../../../../models/city/cityDto";
+import {PropertyownerService} from "../../../../services/propertyowner/propertyowner.service";
+import {InnerpropertyService} from "../../../../services/innerproperty/innerproperty.service";
+import {PropertylocationService} from "../../../../services/propertylocation/propertylocation.service";
+import {PropertysurfaceService} from "../../../../services/propertysurface/propertysurface.service";
+import {PropertyenergiesService} from "../../../../services/propertyenergies/propertyenergies.service";
 
 @Component({
   selector: 'app-add-property',
@@ -18,7 +25,12 @@ import * as url from "url";
   styleUrls: ['./add-property.component.css']
 })
 export class AddPropertyComponent implements OnInit {
-  constructor(private propertyService:PropertyService,private router:Router,private route:ActivatedRoute) { }
+  constructor(private propertyService:PropertyService,private router:Router,private route:ActivatedRoute
+              ,private cityService:CityService,private exteriorPropertyService:ExteriorpropertyService,
+              private ownerService:PropertyownerService,private interiorPropertyService:InnerpropertyService,
+              private locationService:PropertylocationService,private surfaceService:PropertysurfaceService,
+              private energyService:PropertyenergiesService
+  ) { }
   currentRoute:string[]=this.router.url.split("/");
   home=faHome;
   upload = faUpload;
@@ -38,8 +50,38 @@ export class AddPropertyComponent implements OnInit {
   location:PropertyLocationDto = new PropertyLocationDto();
   exteriorProperty:ExteriorPropertyDto = new ExteriorPropertyDto();
   propertyEnergies:PropertyEnergiesDto= new PropertyEnergiesDto();
+  propertyOwnerList:PropertyOwnerDto[]=[];
+  propertySurfaceList:PropertySurfaceDto[]=[];
+  innerPropertyList:InnerPropertyDto[]=[];
+  propertyLocationList:PropertyLocationDto[]=[];
+  exteriorPropertyList:ExteriorPropertyDto[]=[];
+  propertyEnergiesList:PropertyEnergiesDto[]=[];
+  cityList:CityDto[]=[];
+  success: string = '';
+  error: string = '';
   ngOnInit(): void {
-    this.currentRoute.shift()
+    this.currentRoute.shift();
+    this.cityService.getList().subscribe((data)=>{
+      this.cityList = Array.from(data);
+    });
+    this.ownerService.getList().subscribe((data)=>{
+      this.propertyOwnerList = Array.from(data);
+    });
+    this.locationService.getList().subscribe((data)=>{
+      this.propertyLocationList = Array.from(data);
+    });
+    this.interiorPropertyService.getList().subscribe((data)=>{
+      this.innerPropertyList = Array.from(data);
+    });
+    this.exteriorPropertyService.getList().subscribe((data)=>{
+      this.exteriorPropertyList = Array.from(data);
+    });
+    this.surfaceService.getList().subscribe((data)=>{
+      this.propertySurfaceList = Array.from(data);
+    });
+    this.energyService.getList().subscribe((data)=>{
+      this.propertyEnergiesList = Array.from(data);
+    });
   }
   confirmOwner(){
     this.property.owner=this.owner;
@@ -61,5 +103,25 @@ export class AddPropertyComponent implements OnInit {
   }
   navigate(path:string){
     this.router.navigate([path]);
+  }
+  closeSuccess(){
+    this.success = "";
+    this.navigate("agent/properties");
+  }
+  onSubmit(){
+    console.log(this.property);
+    this.propertyService.add(this.property).subscribe((data)=>{
+      this.success = "Property Added Successfully";
+      setInterval(()=>{
+        this.success = "";
+        this.navigate("agent/properties");
+      },1000*10);
+    },(messageError) => {
+      this.success = "";
+      this.error = messageError.error;
+      setInterval(()=>{
+        this.error = "";
+      },1000*10);
+    });
   }
 }

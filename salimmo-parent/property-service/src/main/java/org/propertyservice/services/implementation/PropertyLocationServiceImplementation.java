@@ -38,7 +38,11 @@ public class PropertyLocationServiceImplementation implements PropertyLocationSe
         List<PropertyLocationDto> propertyLocationDtoList = propertyLocations.getContent().stream().map(pl->modelMapper.map(pl,PropertyLocationDto.class)).collect(Collectors.toList());
         return new PageImpl<>(propertyLocationDtoList,propertyLocations.getPageable(),propertyLocations.getTotalElements());
     }
-
+    @Override
+    public List<PropertyLocationDto> findAll() {
+        List<PropertyLocation> propertyLocations = propertyLocationRepository.findAll();
+        return propertyLocations.stream().map(pl->modelMapper.map(pl,PropertyLocationDto.class)).collect(Collectors.toList());
+    }
     @Override
     public PropertyLocationDto findById(Long id) {
         Optional<PropertyLocation> propertyLocation = propertyLocationRepository.findById(id);

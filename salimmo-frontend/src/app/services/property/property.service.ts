@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpParams, HttpResponse} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {PropertyDto} from "../../models/property/propertyDto";
 import {Observable} from "rxjs";
 import {Page} from "../../models/page/page";
@@ -21,5 +21,8 @@ export class PropertyService {
   }
   public delete(id:number):Observable<PropertyDto>{
     return this.http.delete<PropertyDto>(this.host+this.api+id);
+  }
+  public add(propertyDto:PropertyDto):Observable<PropertyDto>{
+    return this.http.post<PropertyDto>(this.host+this.api,propertyDto);
   }
 }

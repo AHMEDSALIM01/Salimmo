@@ -40,6 +40,11 @@ public class InnerPropertyServiceImplementation implements InnerPropertyService 
         List<InnerPropertyDto> innerPropertyDtoList = innerProperties.getContent().stream().map(p->modelMapper.map(p, InnerPropertyDto.class)).collect(Collectors.toList());
         return new PageImpl<>(innerPropertyDtoList, innerProperties.getPageable(), innerProperties.getTotalElements());
     }
+    @Override
+    public List<InnerPropertyDto> findAll() {
+        List<InnerProperty> innerProperties = innerPropertyRepository.findAll();
+        return innerProperties.stream().map(p->modelMapper.map(p, InnerPropertyDto.class)).collect(Collectors.toList());
+    }
 
     @Override
     public InnerPropertyDto add(InnerPropertyDto innerPropertyDto) {

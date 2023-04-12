@@ -8,10 +8,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/v1/property-energies")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class PropertyEnergiesController {
     private final PropertyEnergiesService propertyEnergiesService;
 
@@ -24,6 +27,12 @@ public class PropertyEnergiesController {
     @GetMapping
     public ResponseEntity<Page<PropertyEnergiesDto>> findAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
         Page<PropertyEnergiesDto> propertyEnergiesList = propertyEnergiesService.findAll(page, size);
+        return ResponseEntity.ok(propertyEnergiesList);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<PropertyEnergiesDto>> findAll() {
+        List<PropertyEnergiesDto> propertyEnergiesList = propertyEnergiesService.findAll();
         return ResponseEntity.ok(propertyEnergiesList);
     }
 

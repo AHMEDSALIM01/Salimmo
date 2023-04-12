@@ -9,9 +9,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.webjars.NotFoundException;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/locations")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PropertyLocationController {
     private final PropertyLocationService propertyLocationService;
     @GetMapping("")
@@ -20,7 +23,11 @@ public class PropertyLocationController {
         Page<PropertyLocationDto> propertyLocations = propertyLocationService.findAll(page, size);
         return ResponseEntity.ok(propertyLocations);
     }
-
+    @GetMapping("/all")
+    public ResponseEntity<List<PropertyLocationDto>> getAll() {
+        List<PropertyLocationDto> propertyLocations = propertyLocationService.findAll();
+        return ResponseEntity.ok(propertyLocations);
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Object> getById(@PathVariable Long id) {
         try {

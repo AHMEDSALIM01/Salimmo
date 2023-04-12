@@ -12,8 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/owners")
+@RequestMapping("/api/v1/owners")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:4200")
 public class PropertyOwnerController {
 
     private final PropertyOwnerService propertyOwnerService;
@@ -29,6 +30,12 @@ public class PropertyOwnerController {
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
         Page<PropertyOwnerDto> ownersDto = propertyOwnerService.findAll(page, size);
+        return new ResponseEntity<>(ownersDto, HttpStatus.OK);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<PropertyOwnerDto>> findAll() {
+        List<PropertyOwnerDto> ownersDto = propertyOwnerService.findAll();
         return new ResponseEntity<>(ownersDto, HttpStatus.OK);
     }
 

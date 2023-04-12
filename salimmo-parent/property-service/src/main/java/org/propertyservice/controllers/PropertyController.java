@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/property")
 @Validated
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PropertyController {
     private final PropertyService propertyService;
     @GetMapping("/")
