@@ -39,6 +39,11 @@ public class ExteriorPropertyServiceImplementation implements ExteriorPropertySe
         List<ExteriorPropertyDto> exteriorPropertyDtoList = exteriorProperties.getContent().stream().map(p->modelMapper.map(p, ExteriorPropertyDto.class)).collect(Collectors.toList());
         return new PageImpl<>(exteriorPropertyDtoList, exteriorProperties.getPageable(), exteriorProperties.getTotalElements());
     }
+    @Override
+    public List<ExteriorPropertyDto> findAll() {
+        List<ExteriorProperty> exteriorProperties = exteriorPropertyRepository.findAll();
+        return  exteriorProperties.stream().map(p->modelMapper.map(p, ExteriorPropertyDto.class)).collect(Collectors.toList());
+    }
 
     @Override
     public ExteriorPropertyDto add(ExteriorPropertyDto exteriorPropertyDto) {

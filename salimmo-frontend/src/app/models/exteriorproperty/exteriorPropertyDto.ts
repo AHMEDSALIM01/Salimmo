@@ -1,4 +1,5 @@
 export class ExteriorPropertyDto {
+  id!:number;
   yearConstruction!:Date;
   windows!:string;
   shutter!:string;

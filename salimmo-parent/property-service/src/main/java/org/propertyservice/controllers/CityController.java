@@ -10,9 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.webjars.NotFoundException;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/cities")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CityController {
     private final CityService cityService;
     @PostMapping
@@ -51,6 +54,11 @@ public class CityController {
                                                  @RequestParam(defaultValue = "10") int size,
                                                  @RequestParam(defaultValue = "name") String[] sort) {
         Page<CityDto> cities = cityService.findAll(page, size, Sort.by(sort));
+        return ResponseEntity.ok().body(cities);
+    }
+    @GetMapping("/all")
+    public ResponseEntity<List<CityDto>> findAll() {
+        List<CityDto> cities = cityService.findAll();
         return ResponseEntity.ok().body(cities);
     }
 }

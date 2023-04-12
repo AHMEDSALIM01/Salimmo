@@ -39,7 +39,11 @@ public class PropertyEnergiesServiceImplementation implements PropertyEnergiesSe
         List<PropertyEnergiesDto> innerPropertyResponseDtoList = propertyEnergiesPage.getContent().stream().map(p->modelMapper.map(p, PropertyEnergiesDto.class)).collect(Collectors.toList());
         return new PageImpl<>(innerPropertyResponseDtoList, propertyEnergiesPage.getPageable(), propertyEnergiesPage.getTotalElements());
     }
-
+    @Override
+    public List<PropertyEnergiesDto> findAll() {
+        List<PropertyEnergies> propertyEnergiesPage = propertyEnergiesRepository.findAll();
+        return propertyEnergiesPage.stream().map(p->modelMapper.map(p, PropertyEnergiesDto.class)).collect(Collectors.toList());
+    }
     @Override
     public PropertyEnergiesDto add(PropertyEnergiesDto innerPropertyRequestDto) {
         PropertyEnergies propertyEnergies = modelMapper.map(innerPropertyRequestDto,PropertyEnergies.class);

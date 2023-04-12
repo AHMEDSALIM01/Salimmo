@@ -43,6 +43,12 @@ public class PropertySurfaceServiceImplementation implements PropertySurfaceServ
     }
 
     @Override
+    public List<PropertySurfaceDto> findAll() {
+        List<PropertySurface> propertiesSurface = propertySurfaceRepository.findAll();
+        return propertiesSurface.stream().map(p->modelMapper.map(p, PropertySurfaceDto.class)).collect(Collectors.toList());
+    }
+
+    @Override
     public PropertySurfaceDto add(PropertySurfaceDto propertySurfaceDto) {
         if(Boolean.FALSE.equals(surfaceValidator.isValid(propertySurfaceDto))){
             throw new IllegalStateException(surfaceValidator.getMessage());
