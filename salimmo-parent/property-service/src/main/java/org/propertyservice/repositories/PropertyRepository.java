@@ -3,6 +3,7 @@ package org.propertyservice.repositories;
 import org.propertyservice.entities.Property;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,6 +20,8 @@ import java.util.UUID;
 @Transactional
 public interface PropertyRepository extends JpaRepository<Property,Long> {
     Page<Property> findAll(Pageable pageable);
+
+    Page<Property> findAll(Specification<Property> specification,Pageable pageable);
     @Query(value = "SELECT * FROM property WHERE vues > 0 order by vues DESC LIMIT 10",nativeQuery = true)
     List<Property> findRecommended();
     Optional<Property> findPropertyByRef(UUID ref);

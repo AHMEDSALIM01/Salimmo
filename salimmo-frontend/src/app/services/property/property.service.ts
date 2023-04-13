@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {PropertyDto} from "../../models/property/propertyDto";
 import {Observable} from "rxjs";
 import {Page} from "../../models/page/page";
+import {CriteriaFilter} from "../../models/criteria/criteria-filter";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,9 @@ export class PropertyService {
     const params = new HttpParams()
       .set('page', pageNumber).set('size',size);
     return this.http.get<Page<PropertyDto>>(this.host+this.api,{params});
+  }
+  public filter(filter:CriteriaFilter):Observable<Page<PropertyDto>>{
+    return this.http.post<Page<PropertyDto>>(this.host+this.api+"filter",filter);
   }
   public getRecommendedProperties():Observable<Set<PropertyDto>>{
     return this.http.get<Set<PropertyDto>>(this.host+this.api+"home");

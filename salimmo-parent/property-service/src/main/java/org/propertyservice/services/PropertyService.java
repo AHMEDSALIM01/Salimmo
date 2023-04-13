@@ -1,7 +1,9 @@
 package org.propertyservice.services;
 
 import org.propertyservice.dto.PropertyDto;
+import org.propertyservice.helpers.CriteriaFilter;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,8 @@ import java.util.UUID;
 public interface PropertyService{
     PropertyDto findById(Long id);
     Page<PropertyDto> findAll(int page, int size);
+
+    Page<PropertyDto> filter(CriteriaFilter criteriaFilter, int page,int size);
 
     List<PropertyDto> findRecommended();
 

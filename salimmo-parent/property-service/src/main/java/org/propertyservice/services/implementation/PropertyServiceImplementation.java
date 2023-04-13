@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.propertyservice.dto.*;
 import org.propertyservice.entities.*;
+import org.propertyservice.enums.PropertyType;
+import org.propertyservice.helpers.CriteriaFilter;
 import org.propertyservice.repositories.PropertyRepository;
 import org.propertyservice.services.*;
 import org.propertyservice.validators.PropertyValidator;
@@ -12,10 +14,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.webjars.NotFoundException;
 
+import javax.persistence.criteria.*;
+import javax.swing.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -50,7 +55,39 @@ public class PropertyServiceImplementation implements PropertyService {
         List<PropertyDto> propertyDtoList = properties.getContent().stream().map(p->modelMapper.map(p, PropertyDto.class)).collect(Collectors.toList());
         return new PageImpl<>(propertyDtoList, properties.getPageable(), properties.getTotalElements());
     }
+    @Override
+    public Page<PropertyDto> filter(CriteriaFilter criteriaFilter,int page,int size){
+        Pageable pageable = PageRequest.of(page,size);
 
+        Page<Property> properties = propertyRepository.findAll(new Specification<Property>() {
+            @Override
+            public Predicate toPredicate(Root<Property> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder) {
+                List<Predicate> predicates = new ArrayList<>();
+                if(criteriaFilter.getCity() != null){
+                    Join<Property,PropertyLocation> location= root.join("propertyLocation");
+                    Join<PropertyLocation,City> city = location.join("city");
+                    predicates.add(criteriaBuilder.like(city.get("name"),'%'+criteriaFilter.getCity()+'%'));
+                }
+                if(criteriaFilter.getMinPrice() !=null && criteriaFilter.getMaxPrice()!=null){
+                    predicates.add(criteriaBuilder.between(root.get("netPrice"),criteriaFilter.getMinPrice(),criteriaFilter.getMinPrice()));
+                }
+                if(criteriaFilter.getNbrOfRooms()!=0){
+                    Join<Property,InnerProperty> innerProperty = root.join("innerProperty");
+                    predicates.add(criteriaBuilder.equal(innerProperty.get("nbrOfRooms"),criteriaFilter.getNbrOfRooms()));
+                }
+                if(criteriaFilter.getNbOfBath()!=0){
+                    Join<Property,InnerProperty> innerProperty = root.join("innerProperty");
+                    predicates.add(criteriaBuilder.equal(innerProperty.get("nbrOfBathrooms"),criteriaFilter.getNbOfBath()));
+                }
+                if(criteriaFilter.getType()!=null){
+                    predicates.add(criteriaBuilder.equal(root.get("type"), PropertyType.valueOf(criteriaFilter.getType())));
+                }
+                return criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]));
+            }
+        },pageable);
+        List<PropertyDto> propertyDtoList = properties.getContent().stream().map(p->modelMapper.map(p, PropertyDto.class)).collect(Collectors.toList());
+        return new PageImpl<>(propertyDtoList, properties.getPageable(), properties.getTotalElements());
+    }
     @Override
     public List<PropertyDto> findRecommended(){
         List<Property> properties = propertyRepository.findRecommended();
