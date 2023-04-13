@@ -17,6 +17,8 @@ export class PropertiesComponent implements OnInit {
   public properties:PropertyDto[]=[];
   public pageNumber:number=0;
   public hasNext = true;
+  public hasPrevious = false;
+  public loading = false;
   public size:number=10;
   search=faSearch
   reload=faUndo;
@@ -58,4 +60,5 @@ export class PropertiesComponent implements OnInit {
   isEmpty(filter:CriteriaFilter):boolean{
     return Object.keys(filter).length === 0;
   }
+
 }

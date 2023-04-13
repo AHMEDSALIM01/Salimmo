@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/v1/owners")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PropertyOwnerController {
 
     private final PropertyOwnerService propertyOwnerService;

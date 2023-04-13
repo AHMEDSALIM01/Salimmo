@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/surfaces")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PropertySurfaceController {
     private final PropertySurfaceService propertySurfaceService;
     @GetMapping("")

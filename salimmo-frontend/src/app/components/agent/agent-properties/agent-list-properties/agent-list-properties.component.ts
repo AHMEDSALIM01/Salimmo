@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {catchError, of} from "rxjs";
+import {catchError, finalize, of} from "rxjs";
 import {PropertyService} from "../../../../services/property/property.service";
 import {Router} from "@angular/router";
 import {faEye} from "@fortawesome/free-solid-svg-icons/faEye";
@@ -23,24 +23,16 @@ export class AgentListPropertiesComponent implements OnInit {
   public properties:PropertyDto[]=[];
   public pageNumber:number=0;
   public hasNext = true;
-  public size:number=10;
+  public hasPrevious = false;
+  public size:number=1;
+  public defaultSize = 1;
+  count: number =0;
   public success:string="";
+  totalPages: number=0;
   constructor(private propertyService:PropertyService,private router:Router) { }
 
   ngOnInit(): void {
-    this.propertyService.getAllProperties(this.pageNumber, this.size).pipe(
-      catchError(error => {
-        console.error(error);
-        return of(null);
-      }),
-    ).subscribe(pageData => {
-      if (pageData) {
-        this.properties = pageData.content;
-        this.hasNext = pageData.totalElements > (this.pageNumber * this.size);
-      }
-      console.log(this.properties);
-    });
-
+    this.getAllProperties();
   }
   delete(id:number){
     this.propertyService.delete(id).subscribe((data)=>{
@@ -54,5 +46,30 @@ export class AgentListPropertiesComponent implements OnInit {
   navigate(path:string){
     this.router.navigate([path]);
   }
-
+  getAllProperties(){
+    this.properties = [];
+    if(this.size>this.defaultSize){
+      this.pageNumber=0;
+    }
+    this.propertyService.getAllProperties(this.pageNumber, this.size).pipe(
+      catchError(error => {
+        console.error(error);
+        return of(null);
+      }),
+    ).subscribe(pageData => {
+      if (pageData) {
+        this.properties = pageData.content;
+        this.hasNext = pageData.totalElements > ((this.pageNumber+1) * this.size);
+        this.count = pageData.totalElements;
+        this.totalPages = pageData.totalPages;
+        this.hasPrevious = this.pageNumber > 0;
+      }
+      console.log(pageData)
+    });
+  }
+  paginate(pageNum: number) {
+    this.pageNumber = pageNum;
+    this.hasPrevious = this.pageNumber > 0;
+    this.getAllProperties();
+  }
 }

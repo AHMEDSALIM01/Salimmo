@@ -5,25 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0859f9f-dbe8-47c2-83b1-bf60519f7e48" name="Changes" comment="creation of OwnerValidator and PropertyValidator classes;">
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/criteria/criteria-filter.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/models/criteria/criteria-filter.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/helpers/CriteriaFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/add-property/add-property.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/security/keycloack-http-interceptor-service.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/security/keycloack-http-interceptor-service.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/security/keycloak-security.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/security/keycloak-security.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-list-properties/agent-list-properties.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-properties/agent-properties.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agent-side-bar/agent-side-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/agent/agentnavbar/agent-navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/clientnavbar/client-navbar.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/properties.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/services/property/property.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint-state.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint-state.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/src/app/components/public/properties/side-bar/side-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../salimmo-frontend/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../salimmo-frontend/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/CityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/CityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/ExteriorPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/ExteriorPropertyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/InnerPropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/InnerPropertyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/repositories/PropertyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/PropertyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyEnergiesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyEnergiesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyLocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyLocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyOwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyOwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertySurfaceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertySurfaceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property-service/target/classes/org/propertyservice/controllers/PropertyOwnerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/property-service/target/classes/org/propertyservice/controllers/PropertyOwnerController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +201,7 @@
       <workItem from="1679780292342" duration="17630000" />
       <workItem from="1680788706882" duration="25037000" />
       <workItem from="1680903310586" duration="10307000" />
-      <workItem from="1681258366671" duration="23103000" />
+      <workItem from="1681258366671" duration="30572000" />
     </task>
     <task id="LOCAL-00001" summary="Preparation de l'environnement de travail">
       <created>1678647361780</created>
@@ -620,6 +636,11 @@
           <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/services/implementation/PropertyServiceImplementation.java</url>
           <line>81</line>
           <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/property-service/src/main/java/org/propertyservice/controllers/PropertyController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
