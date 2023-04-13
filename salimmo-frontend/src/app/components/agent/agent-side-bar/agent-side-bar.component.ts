@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {faAreaChart, faBolt, faHomeAlt, faLocationDot, faUserAlt} from "@fortawesome/free-solid-svg-icons";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-agent-side-bar',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agent-side-bar.component.css']
 })
 export class AgentSideBarComponent implements OnInit {
-
-  constructor() { }
+  home=faHomeAlt;
+  user=faUserAlt;
+  square=faAreaChart;
+  location=faLocationDot;
+  energy=faBolt;
+  currentRout?:string;
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.currentRout = this.router.url;
   }
-
 }

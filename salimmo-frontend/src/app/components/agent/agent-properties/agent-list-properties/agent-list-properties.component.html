@@ -2,10 +2,18 @@
   <span  class="font-medium">{{success}}</span>
   <fa-icon (click)="success=''" [icon]="close" class="text-md text-red-600"></fa-icon>
 </div>
-<div class="flex justify-end max-w-screen-lg">
-  <button (click)="navigate('agent/properties/add')" class="font-medium text-sm py-2 px-2.5 mb-3 rounded-md text-gray-50 bg-indigo-900 hover:shadow-2xl hover:shadow hover:shadow-indigo-600"><span class="font-medium me-2">Add Property</span><fa-icon [icon]="add"></fa-icon></button>
+<div class="flex justify-between max-w-screen-lg">
+  <div class="flex justify-start max-w-screen-lg">
+    <select (change)="ngOnInit()" [(ngModel)]="size" class="font-medium text-sm py-2 px-2.5 mb-3 rounded-md text-gray-50 bg-indigo-900">
+      <option value="" disabled>item per page</option>
+      <option *ngFor="let e of [1,5,10,15,20,50,100];let i=index" value="{{e}}">{{e}}</option>
+    </select>
+  </div>
+  <div class="">
+    <button (click)="navigate('agent/properties/add')" class="font-medium text-sm py-2 px-2.5 mb-3 rounded-md text-gray-50 bg-indigo-900 hover:shadow-2xl hover:shadow hover:shadow-indigo-600"><span class="font-medium me-2">Add Property</span><fa-icon [icon]="add"></fa-icon></button>
+  </div>
 </div>
-<div class="relative overflow-x-auto max-w-screen-lg shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto max-w-screen-lg shadow-md sm:rounded-lg tab">
   <table class="text-sm text-left text-gray-500 dark:text-gray-400 align-middle text-center w-full">
     <thead class="text-xs text-gray-200 uppercase bg-indigo-900 dark:bg-gray-700 dark:text-gray-400">
     <tr>
@@ -67,36 +75,24 @@
     </tbody>
   </table>
   <h1 *ngIf="properties.length==0" class="text-gray-300 w-full font-semibold text-center text-lg border-0 py-5 border-b-2 border-gray-300">No properties found</h1>
-  <nav class="flex items-center justify-between p-4" aria-label="Table navigation">
-    <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
-    <ul class="inline-flex items-center -space-x-px">
-      <li>
-        <a href="#" class="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-          <span class="sr-only">Previous</span>
-          <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-      </li>
-      <li>
-        <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-      </li>
-      <li>
-        <a href="#" aria-current="page" class="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-      </li>
-      <li>
-        <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
-      </li>
-      <li>
-        <a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
-      </li>
-      <li>
-        <a href="#" class="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-          <span class="sr-only">Next</span>
-          <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-        </a>
-      </li>
-    </ul>
-  </nav>
 </div>
+<nav class="flex items-center justify-between p-4 w-full max-w-screen-lg" aria-label="Table navigation">
+  <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">{{pageNumber+1}}-{{totalPages}}</span> of <span class="font-semibold text-gray-900 dark:text-white">{{count}}</span></span>
+  <ul class="inline-flex items-center -space-x-px">
+    <li>
+      <button (click)="paginate(pageNumber-1)" [ngClass]="hasPrevious?'block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700':'block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg cursor-not-allowed'" [disabled]="!hasPrevious">
+        <span class="sr-only">Previous</span>
+        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+      </button>
+    </li>
+    <li *ngFor="let e of [].constructor(totalPages);let i=index">
+      <span (click)="paginate(i)" [ngClass]=" i==pageNumber ? 'px-3 py-2 leading-tight text-gray-50 border border-gray-300 bg-indigo-900 cursor-pointer':'px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white cursor-pointer'">{{i+1}}</span>
+    </li>
+    <li>
+      <button  (click)="paginate(pageNumber+1)" [ngClass]="hasNext?'block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700':'block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg cursor-not-allowed'" [disabled]="!hasNext">
+        <span class="sr-only">Next</span>
+        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+      </button>
+    </li>
+  </ul>
+</nav>

@@ -50,6 +50,7 @@ export class AddPropertyComponent implements OnInit {
   location:PropertyLocationDto = new PropertyLocationDto();
   exteriorProperty:ExteriorPropertyDto = new ExteriorPropertyDto();
   propertyEnergies:PropertyEnergiesDto= new PropertyEnergiesDto();
+  city:CityDto = new CityDto();
   propertyOwnerList:PropertyOwnerDto[]=[];
   propertySurfaceList:PropertySurfaceDto[]=[];
   innerPropertyList:InnerPropertyDto[]=[];
@@ -87,6 +88,7 @@ export class AddPropertyComponent implements OnInit {
     this.property.owner=this.owner;
   }
   confirmLocation(){
+    this.location.city = this.city;
     this.property.propertyLocation=this.location;
   }
   confirmInnerProperty(){
@@ -109,16 +111,31 @@ export class AddPropertyComponent implements OnInit {
     this.navigate("agent/properties");
   }
   onSubmit(){
+    this.property.owner=this.owner;
+    this.property.propertyLocation=this.location;
+    this.property.innerProperty = this.interiorProperty;
+    this.property.exteriorProperty=this.exteriorProperty;
+    this.property.propertySurface = this.surface;
+    this.property.propertyEnergies = this.propertyEnergies;
     console.log(this.property);
     this.propertyService.add(this.property).subscribe((data)=>{
       this.success = "Property Added Successfully";
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
       setInterval(()=>{
         this.success = "";
-        this.navigate("agent/properties");
       },1000*10);
     },(messageError) => {
       this.success = "";
       this.error = messageError.error;
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
       setInterval(()=>{
         this.error = "";
       },1000*10);

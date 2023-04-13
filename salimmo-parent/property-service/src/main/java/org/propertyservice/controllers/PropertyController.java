@@ -1,11 +1,14 @@
 package org.propertyservice.controllers;
 
 import lombok.RequiredArgsConstructor;
+import org.hibernate.HibernateException;
 import org.propertyservice.dto.PropertyDto;
+import org.propertyservice.helpers.CriteriaFilter;
 import org.propertyservice.services.PropertyService;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +23,23 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/property")
 @Validated
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class PropertyController {
     private final PropertyService propertyService;
     @GetMapping("/")
-    public ResponseEntity<Object> getAll(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10") int size){
+    public ResponseEntity<Object> getAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
         try{
             Page<PropertyDto> propertyList = propertyService.findAll(page,size);
+            return ResponseEntity.status(HttpStatus.OK).body(propertyList);
+        }catch (Exception e){
+            return ResponseEntity.internalServerError().body(e.getMessage());
+        }
+    }
+
+    @PostMapping("/filter")
+    public ResponseEntity<Object> filter(@RequestBody CriteriaFilter criteriaFilter,@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
+        try{
+            Page<PropertyDto> propertyList = propertyService.filter(criteriaFilter,page,size);
             return ResponseEntity.status(HttpStatus.OK).body(propertyList);
         }catch (Exception e){
             return ResponseEntity.internalServerError().body(e.getMessage());
@@ -63,7 +76,7 @@ public class PropertyController {
             }
             return ResponseEntity.badRequest().body("");
         }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e instanceof HibernateException || e instanceof JpaSystemException ? "Error Adding property fields are unique" : e.getMessage());
         }
     }
 

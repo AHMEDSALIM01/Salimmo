@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentPropertiesComponent implements OnInit {
 
-
   ngOnInit(): void {
 
   }

@@ -1,41 +1,53 @@
 <div class="flex items-stretch">
   <app-side-bar></app-side-bar>
-  <div class="bg-gray-50 w-full p-3.5 lg:ps-20 flex place-items-start flex-col justify-evenly">
+  <div [ngClass]="noPropertyFound===undefined ?'bg-gray-50 w-full p-3.5 lg:ps-20 flex place-items-start flex-col justify-evenly':'bg-gray-50 w-full p-3.5 lg:ps-20 flex place-items-start flex-col justify-start'">
     <form class="flex shadow-3xl shadow-indigo-950 shadow items-center relative mt-10  p-3 flex-col md:flex-row bg-white  rounded-md">
       <div class="relative z-0 mb-6 md:me-2 group">
-        <input type="text" name="city" id="city" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900" placeholder=" "/>
+        <input [(ngModel)]="filter.city" type="text" name="city" id="city" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900" placeholder=" "/>
         <label for="city" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">City</label>
       </div>
       <div class="relative z-0 mb-6 md:me-2 group">
-        <select name="property_type" id="property_type" class="block ps-2 py-2.5 w-full mt-3 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900">
-          <option>Property type</option>
-          <option>Apartment</option>
-          <option>House</option>
+        <select [(ngModel)]="filter.type" name="property_type" id="property_type" class="block ps-2 py-2.5 w-full mt-3 text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900">
+          <option value="">Property type</option>
+          <option value="APARTMENT">APARTMENT</option>
+          <option value="DUPLEX">DUPLEX</option>
+          <option value="VILLA">VILLA</option>
+          <option value="HOUSE">HOUSE</option>
+          <option value="BUILDING">BUILDING</option>
+          <option value="GROUND">GROUND</option>
+          <option value="BUNGALOW">BUNGALOW</option>
+          <option value="COTTAGE">COTTAGE</option>
+          <option value="FACTORY">FACTORY</option>
+          <option value="RIAD">RIAD</option>
+          <option value="TRIPLEX">TRIPLEX</option>
+          <option value="STUDIO">STUDIO</option>
+          <option value="HANGAR">HANGAR</option>
         </select>
         <label for="property_type" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Property type</label>
       </div>
       <div class="relative z-0  mb-6 md:me-2 group">
-        <input type="text" name="min_price" id="min_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <input [(ngModel)]="filter.minPrice" type="text" name="min_price" id="min_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
         <label for="min_price" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Min Price</label>
       </div>
       <div class="relative z-0  mb-6 md:me-2 group">
-        <input type="text" name="max_price" id="max_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <input [(ngModel)]="filter.maxPrice" type="text" name="max_price" id="max_price" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
         <label for="max_price" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Max Price</label>
       </div>
       <div class="relative z-0  mb-6 md:me-2 group">
-        <input type="number" min="1" max="7" name="Bed" id="nbr_of_rooms" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <input [(ngModel)]="filter.nbrOfRooms" type="number" min="1" max="7" name="Bed" id="nbr_of_rooms" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
         <label for="nbr_of_rooms" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bed</label>
       </div>
       <div class="relative z-0  mb-6 md:me-3 group">
-        <input type="number" min="1" max="7" name="Bed" id="nbr_of_bath" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
+        <input [(ngModel)]="filter.nbOfBath" type="number" min="1" max="7" name="Bed" id="nbr_of_bath" class="block mt-3 py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-indigo-900 focus:outline-none focus:ring-0 focus:border-indigo-900 peer" placeholder=" " required />
         <label for="nbr_of_bath" class="absolute font-bold text-lg text-indigo-900 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-5 -z-10 origin-[0] ">Bath</label>
       </div>
-      <div class="h-full flex justify-center items-center">
-        <button type="button" class="text-white bg-indigo-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 ">OK</button>
+      <div class="h-full flex justify-center space-x-1 items-center">
+        <button (click)="onSubmit()" type="button" class="text-white bg-indigo-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 shadow-lg shadow-blue-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 "><fa-icon [icon]="search"></fa-icon></button>
+        <button *ngIf="!isEmpty(filter)" (click)="undo()" type="button" class="text-white bg-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 shadow-lg shadow-red-500/50 dark:shadow-lg font-medium rounded-lg text-sm px-2 py-2 text-center mr-2 "><fa-icon [icon]="reload"></fa-icon></button>
       </div>
     </form>
-    <div class="pt-5 py-10 grid">
-      <div class="gap-4 py-10 items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4" *ngIf="properties.length>0">
+    <div class="pt-5 py-10" *ngIf="properties.length>0">
+      <div class="gap-4 py-10 items-start grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" >
         <div class="max-w-full relative min-h-max h-auto flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-current hover:cursor-pointer" *ngFor="let property of properties">
           <span class="text-sm top-2 left-2 absolute font-semibold text-white px-3 py-1 bg-red-600 bg-opacity-80 rounded-full">{{property.status}}</span>
           <div class="h-auto">
@@ -64,6 +76,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div *ngIf="noPropertyFound!=undefined" class="flex justify-center mt-5 w-full max-w-screen-lg">
+      <h1 class="text-lg font-medium text-gray-500">{{noPropertyFound}}</h1>
     </div>
   </div>
 </div>

@@ -22,8 +22,6 @@ Kproperty-service/src/main/java/org/propertyservice/entities/BaseEntity.java,1\
 |
 Lproperty-service/src/main/java/org/propertyservice/dto/InnerPropertyDto.java,6\4\643f6ee4c6225f3044c5e9e112416552cbae585c
 ~
-Nproperty-service/src/main/java/org/propertyservice/entities/InnerProperty.java,e\3\e39c3c7459dc13653be4ce3e9960b7a4adeb5d1c
-~
 Nproperty-service/src/main/java/org/propertyservice/dto/PropertySurfaceDto.java,a\a\aa36bb039f77fb8ef5d584dfc2b0f6b723517e23
 ~
 Nproperty-service/src/main/java/org/propertyservice/enums/PropertyCategory.java,b\1\b10af53701d2110ac7d674c368c700d9cfcb70a7

@@ -9,6 +9,7 @@ import {AddPropertyComponent} from "./components/agent/agent-properties/add-prop
 import {
   AgentListPropertiesComponent
 } from "./components/agent/agent-properties/agent-list-properties/agent-list-properties.component";
+import {AuthGaurdService} from "./services/security/auth-gaurd.service";
 
 const routes: Routes = [
   {
@@ -44,7 +45,7 @@ const routes: Routes = [
              path :"add",
              component : AddPropertyComponent
            }
-         ]
+         ],
       }
     ],
   }
